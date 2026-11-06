@@ -1,11 +1,11 @@
-# RamenKu
+# 🍜 RamenKu
 
 Disusun oleh **Bima Gunawan**, NPM 50423276, kelas 4IA24 (Praktikum Rekayasa Perangkat Lunak 2).
 
 Aplikasi desktop (Java Swing) untuk kedai ramen, dikerjakan bertahap per pertemuan praktikum RPL2.
 Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibernate** sebagai ORM (Pertemuan 4).
 
-## Tahapan
+## 🪜 Tahapan
 
 | Pertemuan | Isi | Di mana |
 |---|---|---|
@@ -18,7 +18,7 @@ Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibern
 | 7 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
 | 8 | **Ujian** praktikum | - |
 
-## Struktur repo
+## 📁 Struktur repo
 
 ```
 pertemuan-1 .. pertemuan-4/   materi, LP, TP, kode, LA, dan output tiap pertemuan
@@ -29,7 +29,7 @@ demo-konsol.bat
 koneksi.properties.contoh     contoh pengaturan koneksi MySQL
 ```
 
-## Jadwal pertemuan
+## 📅 Jadwal pertemuan
 
 Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 
@@ -44,7 +44,7 @@ Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 | 7 | Jumat, 27 November 2026 | Menyusul | - |
 | 8 | Jumat, 4 Desember 2026 | Ujian | - |
 
-## Materi, LP, TP, dan Laporan Akhir per pertemuan
+## 📚 Materi, LP, TP, dan Laporan Akhir per pertemuan
 
 Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/TP, kode (`kode`), Laporan Akhir (LA), dan gambar output. Karena kodenya berbeda di tiap pertemuan, folder `kode` menyimpan versi proyek pada pertemuan itu, sedangkan folder `src` di akar repo adalah versi terbaru. Gambar output ada di folder `output` tiap pertemuan.
 
@@ -59,7 +59,7 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 7 | [Menyusul](pertemuan-7) | - | - | - | - | - | - |
 | 8 | [Ujian](pertemuan-8) | - | - | - | - | - | - |
 
-## Struktur database
+## 🗄️ Struktur database
 
 Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`database/ramenku_db.sql`](database/ramenku_db.sql). Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
 
@@ -74,7 +74,7 @@ Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`da
 
 ![Diagram relasi database ramenku_db](database/diagram-relasi.png)
 
-## Susunan kode
+## 🧩 Susunan kode
 
 ```
 src/main/java/id/ramenku/
@@ -89,7 +89,7 @@ src/test/java/                                   tes JUnit (OOP, angka, Hibernat
 database/ramenku_db.sql, diagram-relasi.png      skema, data contoh, dan diagram relasi MySQL
 ```
 
-## Cara menjalankan
+## ▶️ Cara menjalankan
 
 1. Nyalakan **MySQL** di XAMPP.
 2. Impor `database/ramenku_db.sql` sekali (phpMyAdmin tab Import, atau `mysql -u root < database/ramenku_db.sql`).

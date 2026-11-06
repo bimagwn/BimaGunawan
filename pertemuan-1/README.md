@@ -1,4 +1,4 @@
-# Pertemuan 1: Rancangan aplikasi ERP
+# 🗓️ Pertemuan 1: Rancangan aplikasi ERP
 
 Jumat, 16 Oktober 2026
 
