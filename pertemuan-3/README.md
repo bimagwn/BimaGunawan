@@ -2,6 +2,8 @@
 
 Jumat, 30 Oktober 2026
 
+Ringkasan: halaman login dan tiga fitur RamenKu yang terhubung ke MySQL lewat JDBC, lengkap dengan laporan PDF.
+
 | Bagian | Isi |
 |---|---|
 | Materi (PPT) | [PPT_Pertemuan3_MVC.pdf](materi/PPT_Pertemuan3_MVC.pdf) |
