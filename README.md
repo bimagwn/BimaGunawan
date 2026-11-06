@@ -31,10 +31,10 @@ Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 
 | Pertemuan | Tanggal | Materi | Tugas |
 |---|---|---|---|
-| 1 | Jumat, 16 Oktober 2026 | Rancangan aplikasi ERP | LP 1, TP 1, ACT 1, LA 1 |
-| 2 | Jumat, 23 Oktober 2026 | OOP Java | LP 2, TP 2, ACT 2, LA 2 |
-| 3 | Jumat, 30 Oktober 2026 | MVC Java: login dan JDBC | LP 3, TP 3, ACT 3, LA 3 |
-| 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4, ACT 4 |
+| 1 | Jumat, 16 Oktober 2026 | Rancangan aplikasi ERP | LP 1, TP 1, LA 1 |
+| 2 | Jumat, 23 Oktober 2026 | OOP Java | LP 2, TP 2, LA 2 |
+| 3 | Jumat, 30 Oktober 2026 | MVC Java: login dan JDBC | LP 3, TP 3, LA 3 |
+| 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4 |
 
 ## Materi, LP, TP, dan Laporan Akhir per pertemuan
 
@@ -46,24 +46,6 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 2 | OOP Java | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP 2](pertemuan-2/LP/jawaban.md) | [TP 2](pertemuan-2/TP/jawaban.md) | [kode](pertemuan-2/kode) | [LA 2](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [lihat output](pertemuan-2/output) |
 | 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP 3](pertemuan-3/LP/jawaban.md) | [TP 3](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA 3](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
 | 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP 4](pertemuan-4/LP/jawaban.md) | [TP 4](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA 4](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [lihat output](pertemuan-4/output) |
-
-## Hibernate (Pertemuan 4)
-
-Akses data tidak lagi memakai JDBC langsung (`PreparedStatement` dan `ResultSet`), tetapi **Hibernate** (versi 6.6.59.Final). Class Java dipetakan ke tabel lewat anotasi, SQL dibuat otomatis oleh Hibernate, dan perubahan pada objek tersimpan otomatis.
-
-| Entitas (class) | Tabel | Relasi |
-|---|---|---|
-| `Pengguna` | `pengguna` | login diperiksa dengan HQL |
-| `Bahan` | `bahan` | - |
-| `Menu` | `menu` | - |
-| `ResepBaris` | `resep` | banyak-ke-satu ke `Menu` dan `Bahan` |
-| `Nota` | `penjualan` | satu-ke-banyak ke `BarisNota` (cascade) |
-| `BarisNota` | `penjualan_item` | banyak-ke-satu ke `Nota` dan `Menu` |
-
-- `HibernateUtil` membuat `SessionFactory`, menjalankan pekerjaan di dalam transaksi (commit atau rollback), dan menerjemahkan galat database menjadi pesan yang mudah dipahami.
-- Transaksi penjualan: nota, isi nota, dan pengurangan stok disimpan sekaligus; bila stok bahan tidak cukup, semuanya dibatalkan.
-- JasperReports tetap dipakai untuk struk dan laporan stok. Koneksi datanya dipinjam dari Hibernate (`session.doReturningWork`).
-- Dialek bawaan `MariaDBDialect` (XAMPP). Untuk MySQL asli, ubah kunci `dialect` di `koneksi.properties` (lihat `koneksi.properties.contoh`).
 
 ## Struktur database
 
