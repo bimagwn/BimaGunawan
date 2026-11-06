@@ -2,6 +2,8 @@
 
 Jumat, 23 Oktober 2026
 
+Ringkasan: konsep OOP (Encapsulation, Inheritance, Polymorphism) diterapkan pada kode Java.
+
 | Bagian | Isi |
 |---|---|
 | Materi (PPT) | [PPT_Pertemuan2_OOP.pdf](materi/PPT_Pertemuan2_OOP.pdf) |
