@@ -54,10 +54,10 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 2 | OOP Java | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP](pertemuan-2/LP/jawaban.md) | [TP](pertemuan-2/TP/jawaban.md) | [kode](pertemuan-2/kode) | [LA](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [lihat output](pertemuan-2/output) |
 | 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP](pertemuan-3/LP/jawaban.md) | [TP](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
 | 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [lihat output](pertemuan-4/output) |
-| 5 | Menyusul | - | - | - | - | - | - |
-| 6 | Menyusul | - | - | - | - | - | - |
-| 7 | Menyusul | - | - | - | - | - | - |
-| 8 | Ujian | - | - | - | - | - | - |
+| 5 | [Menyusul](pertemuan-5) | - | - | - | - | - | - |
+| 6 | [Menyusul](pertemuan-6) | - | - | - | - | - | - |
+| 7 | [Menyusul](pertemuan-7) | - | - | - | - | - | - |
+| 8 | [Ujian](pertemuan-8) | - | - | - | - | - | - |
 
 ## Struktur database
 
