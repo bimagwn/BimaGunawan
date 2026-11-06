@@ -2,6 +2,8 @@
 
 Jumat, 27 November 2026
 
+Status: folder sudah disiapkan, materi akan diisi setelah pertemuan berlangsung.
+
 | Bagian | Isi |
 |---|---|
 | Materi (PPT) | [materi/](materi) (belum ada) |
