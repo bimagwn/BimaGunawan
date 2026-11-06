@@ -1,0 +1,10 @@
+# Berkas yang tidak ikut ke GitHub
+target/
+nbproject/private/
+*.class
+*.log
+Thumbs.db
+.DS_Store
+koneksi.properties
+/laporan/
+~$*
