@@ -13,6 +13,10 @@ Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibern
 | 2 | **OOP**: Encapsulation, Inheritance, Polymorphism | paket `id.ramenku.oop` (lihat [README-OOP.md](README-OOP.md)) |
 | 3 | **Login**, tiga fitur (**Menu dan Resep**, **Stok Bahan**, **Penjualan**) dengan **JDBC ke MySQL**, dan laporan **JasperReports** (laporan stok dan struk, PDF) | paket `id.ramenku`, `id.ramenku.data`, `id.ramenku.ui`, `id.ramenku.laporan`; basis data `ramenku_db` |
 | 4 | **Hibernate (ORM)**: lapisan data dipindah dari JDBC ke Hibernate (entitas, HQL, transaksi) | paket `id.ramenku.data` (entitas, DAO, `HibernateUtil`) |
+| 5 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
+| 6 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
+| 7 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
+| 8 | **Ujian** praktikum | - |
 
 ## Struktur repo
 
@@ -34,7 +38,11 @@ Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 | 1 | Jumat, 16 Oktober 2026 | Rancangan aplikasi ERP | LP 1, TP 1, LA 1 |
 | 2 | Jumat, 23 Oktober 2026 | OOP Java | LP 2, TP 2, LA 2 |
 | 3 | Jumat, 30 Oktober 2026 | MVC Java: login dan JDBC | LP 3, TP 3, LA 3 |
-| 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4 |
+| 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4, LA 4 |
+| 5 | Jumat, 13 November 2026 | Menyusul | - |
+| 6 | Jumat, 20 November 2026 | Menyusul | - |
+| 7 | Jumat, 27 November 2026 | Menyusul | - |
+| 8 | Jumat, 4 Desember 2026 | Ujian | - |
 
 ## Materi, LP, TP, dan Laporan Akhir per pertemuan
 
