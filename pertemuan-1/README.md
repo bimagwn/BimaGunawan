@@ -2,6 +2,8 @@
 
 Jumat, 16 Oktober 2026
 
+Ringkasan: merancang aplikasi kedai ramen dalam bentuk dokumen, belum ada kode.
+
 | Bagian | Isi |
 |---|---|
 | Materi (PPT) | [PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx](materi/PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx) |
