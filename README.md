@@ -100,13 +100,13 @@ database/ramenku_db.sql, diagram-relasi.png      skema, data contoh, dan diagram
 Pengaturan koneksi bawaan XAMPP (localhost:3306, user `root`, tanpa sandi). Untuk mengubahnya, salin
 `koneksi.properties.contoh` menjadi `koneksi.properties` (berkas ini tidak ikut ke GitHub).
 
-## Pengujian
+## 🧪 Pengujian
 
 `mvn test` menjalankan 20 tes otomatis: konsep OOP, pembacaan angka, serta Hibernate dan laporan PDF. Tes database memakai
 database sementara `ramenku_uji` (dibuat lalu dihapus sendiri) dan dilewati bila MySQL tidak menyala.
 
 PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut ke GitHub).
 
-## Lisensi
+## 📜 Lisensi
 
 Kode sumber proyek ini memakai lisensi MIT (lihat [LICENSE](LICENSE)). Materi PPT dan soal praktikum adalah milik dosen dan asisten laboratorium Universitas Gunadarma dan tidak termasuk dalam lisensi tersebut; berkas itu disertakan hanya sebagai arsip belajar.
