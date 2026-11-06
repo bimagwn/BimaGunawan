@@ -1,0 +1,118 @@
+# RamenKu
+
+Disusun oleh **Bima Gunawan**, NPM 50423276, kelas 4IA24 (Praktikum Rekayasa Perangkat Lunak 2).
+
+Aplikasi desktop (Java Swing) untuk kedai ramen, dikerjakan bertahap per pertemuan praktikum RPL2.
+Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibernate** sebagai ORM (Pertemuan 4).
+
+## Tahapan
+
+| Pertemuan | Isi | Di mana |
+|---|---|---|
+| 1 | Rancangan aplikasi kedai ramen (berupa dokumen, belum ada kode) | dokumen di folder [pertemuan-1](pertemuan-1) |
+| 2 | **OOP**: Encapsulation, Inheritance, Polymorphism | paket `id.ramenku.oop` (lihat [README-OOP.md](README-OOP.md)) |
+| 3 | **Login**, tiga fitur (**Menu dan Resep**, **Stok Bahan**, **Penjualan**) dengan **JDBC ke MySQL**, dan laporan **JasperReports** (laporan stok dan struk, PDF) | paket `id.ramenku`, `id.ramenku.data`, `id.ramenku.ui`, `id.ramenku.laporan`; basis data `ramenku_db` |
+| 4 | **Hibernate (ORM)**: lapisan data dipindah dari JDBC ke Hibernate (entitas, HQL, transaksi) | paket `id.ramenku.data` (entitas, DAO, `HibernateUtil`) |
+
+## Struktur repo
+
+```
+pertemuan-1 .. pertemuan-4/   materi, LP, TP, kode, LA, dan output tiap pertemuan
+src/, pom.xml, database/      proyek RamenKu versi terbaru (Hibernate)
+README-OOP.md                 penjelasan konsep OOP (Pertemuan 2)
+bangun.bat, jalankan.bat,     skrip membangun dan menjalankan aplikasi
+demo-konsol.bat
+koneksi.properties.contoh     contoh pengaturan koneksi MySQL
+```
+
+## Jadwal pertemuan
+
+Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
+
+| Pertemuan | Tanggal | Materi | Tugas |
+|---|---|---|---|
+| 1 | Jumat, 16 Oktober 2026 | Rancangan aplikasi ERP | LP 1, TP 1, ACT 1, LA 1 |
+| 2 | Jumat, 23 Oktober 2026 | OOP Java | LP 2, TP 2, ACT 2, LA 2 |
+| 3 | Jumat, 30 Oktober 2026 | MVC Java: login dan JDBC | LP 3, TP 3, ACT 3, LA 3 |
+| 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4, ACT 4 |
+
+## Materi, LP, TP, dan Laporan Akhir per pertemuan
+
+Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/TP, kode (`kode`), Laporan Akhir (LA), dan gambar output. Karena kodenya berbeda di tiap pertemuan, folder `kode` menyimpan versi proyek pada pertemuan itu, sedangkan folder `src` di akar repo adalah versi terbaru. Gambar output ada di folder `output` tiap pertemuan.
+
+| Pertemuan | Materi | PPT | LP | TP | ACT | Kode | Laporan Akhir | Output |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Rancangan aplikasi ERP | [PPT](pertemuan-1/materi/PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx) | [LP 1](pertemuan-1/LP/jawaban.md) | [TP 1](pertemuan-1/TP/jawaban.md) | [ACT 1](pertemuan-1/ACT/ACT1_BimaGunawan_50423276.docx) ([PDF](pertemuan-1/ACT/ACT1_BimaGunawan_50423276.pdf)) | - | [LA 1](pertemuan-1/LA/LA1_BimaGunawan_50423276.docx) | dokumen rancangan, tanpa tampilan program |
+| 2 | OOP Java | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP 2](pertemuan-2/LP/jawaban.md) | [TP 2](pertemuan-2/TP/jawaban.md) | [ACT 2](pertemuan-2/kode) (kode OOP) | [kode](pertemuan-2/kode) | [LA 2](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [lihat output](pertemuan-2/output) |
+| 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP 3](pertemuan-3/LP/jawaban.md) | [TP 3](pertemuan-3/TP/jawaban.md) | - | [kode](pertemuan-3/kode) | [LA 3](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
+| 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP 4](pertemuan-4/LP/jawaban.md) | [TP 4](pertemuan-4/TP/jawaban.md) | - | [kode](pertemuan-4/kode) | [belum ada](pertemuan-4/LA) | [lihat output](pertemuan-4/output) |
+
+## Hibernate (Pertemuan 4)
+
+Akses data tidak lagi memakai JDBC langsung (`PreparedStatement` dan `ResultSet`), tetapi **Hibernate** (versi 6.6.59.Final). Class Java dipetakan ke tabel lewat anotasi, SQL dibuat otomatis oleh Hibernate, dan perubahan pada objek tersimpan otomatis.
+
+| Entitas (class) | Tabel | Relasi |
+|---|---|---|
+| `Pengguna` | `pengguna` | login diperiksa dengan HQL |
+| `Bahan` | `bahan` | - |
+| `Menu` | `menu` | - |
+| `ResepBaris` | `resep` | banyak-ke-satu ke `Menu` dan `Bahan` |
+| `Nota` | `penjualan` | satu-ke-banyak ke `BarisNota` (cascade) |
+| `BarisNota` | `penjualan_item` | banyak-ke-satu ke `Nota` dan `Menu` |
+
+- `HibernateUtil` membuat `SessionFactory`, menjalankan pekerjaan di dalam transaksi (commit atau rollback), dan menerjemahkan galat database menjadi pesan yang mudah dipahami.
+- Transaksi penjualan: nota, isi nota, dan pengurangan stok disimpan sekaligus; bila stok bahan tidak cukup, semuanya dibatalkan.
+- JasperReports tetap dipakai untuk struk dan laporan stok. Koneksi datanya dipinjam dari Hibernate (`session.doReturningWork`).
+- Dialek bawaan `MariaDBDialect` (XAMPP). Untuk MySQL asli, ubah kunci `dialect` di `koneksi.properties` (lihat `koneksi.properties.contoh`).
+
+## Struktur database
+
+Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`database/ramenku_db.sql`](database/ramenku_db.sql). Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
+
+| Tabel | Fungsi | Kolom |
+|---|---|---|
+| `pengguna` | akun untuk login | id, username, sandi (hash SHA-256), nama |
+| `bahan` | stok bahan baku | id, nama, satuan, stok, stok_minimal |
+| `menu` | daftar menu dan harganya | id, nama, harga |
+| `resep` | bahan yang dipakai per porsi tiap menu | id, menu_id (ke `menu`), bahan_id (ke `bahan`), jumlah |
+| `penjualan` | nota penjualan | id, waktu, total |
+| `penjualan_item` | isi tiap nota | id, penjualan_id (ke `penjualan`), menu_id (ke `menu`), jumlah, harga_satuan |
+
+![Diagram relasi database ramenku_db](database/diagram-relasi.png)
+
+## Susunan kode
+
+```
+src/main/java/id/ramenku/
+  Main.java, LoginForm.java, JendelaUtama.java   aplikasi utama (login lalu menu)
+  Koneksi.java, Pengguna.java                    pengaturan koneksi MySQL, entitas login
+  data/                                          entitas dan DAO Hibernate (Bahan, Menu, ResepBaris, Nota, ...)
+  ui/                                            halaman Stok Bahan, Menu dan Resep, Penjualan
+  laporan/Laporan.java                           pembuat PDF dengan JasperReports
+  oop/                                           kode OOP pertemuan 2 (model, ui, demo konsol)
+src/main/resources/laporan/                      desain laporan (stok_bahan.jrxml, struk.jrxml)
+src/test/java/                                   tes JUnit (OOP, angka, Hibernate ke MySQL)
+database/ramenku_db.sql, diagram-relasi.png      skema, data contoh, dan diagram relasi MySQL
+```
+
+## Cara menjalankan
+
+1. Nyalakan **MySQL** di XAMPP.
+2. Impor `database/ramenku_db.sql` sekali (phpMyAdmin tab Import, atau `mysql -u root < database/ramenku_db.sql`).
+3. Klik ganda `bangun.bat`, lalu `jalankan.bat`. Masuk dengan username `admin`; sandi contohnya ada di baris paling bawah `database/ramenku_db.sql`.
+   - Di NetBeans 17: File, Open Project, pilih folder `RamenKu`, klik kanan proyek, Run.
+   - Demo konsol OOP: `demo-konsol.bat`.
+
+Pengaturan koneksi bawaan XAMPP (localhost:3306, user `root`, tanpa sandi). Untuk mengubahnya, salin
+`koneksi.properties.contoh` menjadi `koneksi.properties` (berkas ini tidak ikut ke GitHub).
+
+## Pengujian
+
+`mvn test` menjalankan 20 tes otomatis: konsep OOP, pembacaan angka, serta Hibernate dan laporan PDF. Tes database memakai
+database sementara `ramenku_uji` (dibuat lalu dihapus sendiri) dan dilewati bila MySQL tidak menyala.
+
+PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut ke GitHub).
+
+## Lisensi
+
+Kode sumber proyek ini memakai lisensi MIT (lihat [LICENSE](LICENSE)). Materi PPT dan soal praktikum adalah milik dosen dan asisten laboratorium Universitas Gunadarma dan tidak termasuk dalam lisensi tersebut; berkas itu disertakan hanya sebagai arsip belajar.
