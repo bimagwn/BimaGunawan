@@ -40,12 +40,12 @@ Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 
 Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/TP, kode (`kode`), Laporan Akhir (LA), dan gambar output. Karena kodenya berbeda di tiap pertemuan, folder `kode` menyimpan versi proyek pada pertemuan itu, sedangkan folder `src` di akar repo adalah versi terbaru. Gambar output ada di folder `output` tiap pertemuan.
 
-| Pertemuan | Materi | PPT | LP | TP | ACT | Kode | Laporan Akhir | Output |
-|---|---|---|---|---|---|---|---|---|
-| 1 | Rancangan aplikasi ERP | [PPT](pertemuan-1/materi/PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx) | [LP 1](pertemuan-1/LP/jawaban.md) | [TP 1](pertemuan-1/TP/jawaban.md) | [ACT 1](pertemuan-1/ACT/ACT1_BimaGunawan_50423276.docx) ([PDF](pertemuan-1/ACT/ACT1_BimaGunawan_50423276.pdf)) | - | [LA 1](pertemuan-1/LA/LA1_BimaGunawan_50423276.docx) | dokumen rancangan, tanpa tampilan program |
-| 2 | OOP Java | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP 2](pertemuan-2/LP/jawaban.md) | [TP 2](pertemuan-2/TP/jawaban.md) | [ACT 2](pertemuan-2/kode) (kode OOP) | [kode](pertemuan-2/kode) | [LA 2](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [lihat output](pertemuan-2/output) |
-| 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP 3](pertemuan-3/LP/jawaban.md) | [TP 3](pertemuan-3/TP/jawaban.md) | - | [kode](pertemuan-3/kode) | [LA 3](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
-| 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP 4](pertemuan-4/LP/jawaban.md) | [TP 4](pertemuan-4/TP/jawaban.md) | - | [kode](pertemuan-4/kode) | [LA 4](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [lihat output](pertemuan-4/output) |
+| Pertemuan | Materi | PPT | LP | TP | Kode | Laporan Akhir | Output |
+|---|---|---|---|---|---|---|---|
+| 1 | Rancangan aplikasi ERP | [PPT](pertemuan-1/materi/PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx) | [LP 1](pertemuan-1/LP/jawaban.md) | [TP 1](pertemuan-1/TP/jawaban.md) | - | [LA 1](pertemuan-1/LA/LA1_BimaGunawan_50423276.docx) | dokumen rancangan, tanpa tampilan program |
+| 2 | OOP Java | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP 2](pertemuan-2/LP/jawaban.md) | [TP 2](pertemuan-2/TP/jawaban.md) | [kode](pertemuan-2/kode) | [LA 2](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [lihat output](pertemuan-2/output) |
+| 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP 3](pertemuan-3/LP/jawaban.md) | [TP 3](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA 3](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
+| 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP 4](pertemuan-4/LP/jawaban.md) | [TP 4](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA 4](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [lihat output](pertemuan-4/output) |
 
 ## Hibernate (Pertemuan 4)
 
