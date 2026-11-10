@@ -2,7 +2,7 @@
 
 Jumat, 27 November 2026
 
-Status: folder sudah disiapkan, materi akan diisi setelah pertemuan berlangsung.
+Status: folder sudah disiapkan. Materi dan tugas diisi setelah pertemuan berlangsung.
 
 | Bagian | Isi |
 |---|---|
