@@ -2,7 +2,7 @@
 
 Jumat, 6 November 2026
 
-Ringkasan: lapisan data dipindah dari JDBC ke Hibernate (entitas, HQL, dan transaksi).
+Ringkasan: lapisan data dipindah dari JDBC ke Hibernate (entitas, HQL, dan transaksi), lengkap dengan kode, laporan akhir, dan gambar output.
 
 | Bagian | Isi |
 |---|---|
