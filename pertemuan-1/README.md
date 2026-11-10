@@ -2,7 +2,7 @@
 
 Jumat, 16 Oktober 2026
 
-Ringkasan: merancang aplikasi kedai ramen dalam bentuk dokumen, belum ada kode.
+Ringkasan: merancang aplikasi kedai ramen dalam bentuk dokumen. Pada pertemuan ini belum ada kode.
 
 | Bagian | Isi |
 |---|---|
