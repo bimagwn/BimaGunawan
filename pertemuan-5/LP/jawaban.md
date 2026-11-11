@@ -25,6 +25,6 @@ Spring bertugas membuat, mengatur, dan menghubungkan objek (disebut _bean_) sert
 5. **Dukungan akses data**: memudahkan penggunaan JDBC, Hibernate, dan JPA.
 
 **5. Jelaskan tujuan penggunaan Hibernate bagi pengembang, dan bagaimana Hibernate dapat mengurangi kebutuhan pemrosesan data manual melalui SQL dan JDBC!**
-Hibernate adalah ORM yang memetakan class Java ke tabel database, sehingga pengembang bekerja dengan objek dan tidak dengan SQL. Hibernate membuat perintah SQL (**INSERT**, **UPDATE**, **DELETE**, **SELECT**) secara otomatis dan mengubah hasilnya menjadi objek, sehingga kode JDBC yang panjang (membuka koneksi, `PreparedStatement`, dan `ResultSet`) tidak perlu ditulis manual.
+Hibernate memetakan class Java ke tabel database sehingga pengembang bekerja dengan objek. Perintah SQL dibuat dan hasilnya diubah menjadi objek secara otomatis, jadi kode JDBC tidak perlu ditulis manual.
 
 [Kembali ke Pertemuan 5](../README.md)
