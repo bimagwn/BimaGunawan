@@ -2,6 +2,6 @@
 
 [LA5_BimaGunawan_50423276.docx](LA5_BimaGunawan_50423276.docx)
 
-Isi: listing dan logika bagian baru Pertemuan 5 (dependency Spring di `pom.xml`, `Konfigurasi` Spring, `BahanDao` sebagai bean Spring, dan aspek AOP `PenerjemahGalat`), disertai output aplikasi yang dijalankan dan isi tabel database.
+Isi: listing dan logika dependency Spring di `pom.xml`, program Spring (`Konfigurasi`, `BahanDao`, dan aspek AOP `PenerjemahGalat`), dan skrip database `ramenku_db.sql`, disertai output hasil menjalankan program.
 
 [Kembali ke Pertemuan 5](../README.md)
