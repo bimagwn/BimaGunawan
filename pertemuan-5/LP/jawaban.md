@@ -18,11 +18,11 @@ Class yang terikat langsung (misalnya membuat objek lain dengan `new`) sulit diu
 Spring bertugas membuat, mengatur, dan menghubungkan objek (disebut _bean_) serta mengelola siklus hidupnya lewat _IoC container_. Contohnya, Spring membuat satu **SessionFactory** dari konfigurasi database lalu menyuntikkannya ke class DAO. Dari **SessionFactory** itu dibuka **Session** untuk setiap operasi, dan Spring yang mengatur transaksi serta penutupannya, sehingga programmer tidak perlu membuat dan menutupnya sendiri.
 
 **4. Jelaskan lima fitur utama Spring Framework yang Anda ketahui!**
-1. **IoC dan Dependency Injection**: Spring yang membuat dan menyuntikkan objek.
-2. **AOP**: memisahkan fungsi pendukung dari logika bisnis.
-3. **Manajemen transaksi**: mengatur _commit_ dan _rollback_ secara otomatis.
-4. **Spring MVC**: membangun aplikasi web dengan pola _Model-View-Controller_.
-5. **Dukungan akses data**: memudahkan penggunaan JDBC, Hibernate, dan JPA.
+1. **Transaction Management**: lapisan abstrak untuk mengelola transaksi dengan mudah.
+2. **JDBC Exception Handling**: _exception_ JDBC yang hierarkis sehingga error lebih mudah ditangani.
+3. **Integrasi dengan Hibernate, JDO, dan iBatis**: layanan integrasi dengan _tools_ ORM tersebut.
+4. **AOP framework**: memisahkan fungsi pendukung dari logika bisnis.
+5. **MVC framework**: kerangka aplikasi web berpola _Model-View-Controller_.
 
 **5. Jelaskan tujuan penggunaan Hibernate bagi pengembang, dan bagaimana Hibernate dapat mengurangi kebutuhan pemrosesan data manual melalui SQL dan JDBC!**
 Hibernate memetakan class Java ke tabel database sehingga pengembang bekerja dengan objek. Perintah SQL dibuat dan hasilnya diubah menjadi objek secara otomatis, jadi kode JDBC tidak perlu ditulis manual.
