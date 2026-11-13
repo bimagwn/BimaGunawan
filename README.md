@@ -14,7 +14,7 @@ Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), **Hibernate**
 | 3 | **Login**, tiga fitur (**Menu dan Resep**, **Stok Bahan**, **Penjualan**) dengan **JDBC ke MySQL**, dan laporan **JasperReports** (laporan stok dan struk, PDF) | paket `id.ramenku`, `id.ramenku.data`, `id.ramenku.ui`, `id.ramenku.laporan`; basis data `ramenku_db` |
 | 4 | **Hibernate (ORM)**: lapisan data dipindah dari JDBC ke Hibernate (entitas, HQL, transaksi) | paket `id.ramenku.data` (entitas, DAO, `HibernateUtil`) |
 | 5 | **Spring Java**: Spring mengelola Hibernate lewat DAO (Dependency Injection, transaksi deklaratif, dan AOP) | paket `id.ramenku.spring` (konfigurasi, konteks, aspek) dan DAO `@Repository` di `id.ramenku.data` |
-| 6 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
+| 6 | **JasperReports**: laporan stok dan struk diunduh sebagai PDF, Word, dan Excel | `Laporan.Format` dan tombol unduh pada halaman Stok Bahan dan Riwayat Nota |
 | 7 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
 | 8 | **Ujian** praktikum | - |
 
@@ -40,7 +40,7 @@ Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 | 3 | Jumat, 30 Oktober 2026 | MVC Java: login dan JDBC | LP 3, TP 3, LA 3 |
 | 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4, LA 4 |
 | 5 | Jumat, 13 November 2026 | Spring Java | LP 5, TP 5, LA 5 |
-| 6 | Jumat, 20 November 2026 | Menyusul | - |
+| 6 | Jumat, 20 November 2026 | JasperReports (PDF, Word, Excel) | - |
 | 7 | Jumat, 27 November 2026 | Menyusul | - |
 | 8 | Jumat, 4 Desember 2026 | Ujian | - |
 
@@ -55,7 +55,7 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP](pertemuan-3/LP/jawaban.md) | [TP](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
 | 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [lihat output](pertemuan-4/output) |
 | 5 | [Spring Java](pertemuan-5) | [PPT](pertemuan-5/materi/PPT_Pertemuan5_Spring.pdf) | [LP](pertemuan-5/LP/jawaban.md) | [TP](pertemuan-5/TP/jawaban.md) | [kode](pertemuan-5/kode) | [LA 5](pertemuan-5/LA/LA5_BimaGunawan_50423276.docx) | [lihat output](pertemuan-5/output) |
-| 6 | [Menyusul](pertemuan-6) | - | - | - | - | - | - |
+| 6 | [JasperReports](pertemuan-6) | - | - | - | [kode](pertemuan-6/kode) | - | [lihat output](pertemuan-6/output) |
 | 7 | [Menyusul](pertemuan-7) | - | - | - | - | - | - |
 | 8 | [Ujian](pertemuan-8) | - | - | - | - | - | - |
 
@@ -83,7 +83,7 @@ src/main/java/id/ramenku/
   data/                                          entitas Hibernate dan DAO @Repository yang dikelola Spring
   spring/                                        konfigurasi Spring, konteks, dan aspek AOP
   ui/                                            halaman Stok Bahan, Menu dan Resep, Penjualan
-  laporan/Laporan.java                           pembuat PDF dengan JasperReports
+  laporan/Laporan.java                           pembuat laporan PDF, Word, dan Excel dengan JasperReports
   oop/                                           kode OOP pertemuan 2 (model, ui, demo konsol)
 src/main/resources/laporan/                      desain laporan (stok_bahan.jrxml, struk.jrxml)
 src/test/java/                                   tes JUnit (OOP, angka, DAO Spring dan Hibernate ke MySQL)
@@ -103,7 +103,7 @@ Pengaturan koneksi bawaan XAMPP (localhost:3306, user `root`, tanpa sandi). Untu
 
 ## 🧪 Pengujian
 
-`mvn test` menjalankan 20 tes otomatis: konsep OOP, pembacaan angka, serta DAO (Spring dan Hibernate) dan laporan PDF. Tes database memakai
+`mvn test` menjalankan 21 tes otomatis: konsep OOP, pembacaan angka, serta DAO (Spring dan Hibernate) dan laporan PDF, Word, dan Excel. Tes database memakai
 database sementara `ramenku_uji` (dibuat lalu dihapus sendiri) dan dilewati bila MySQL tidak menyala.
 
 PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut ke GitHub).
