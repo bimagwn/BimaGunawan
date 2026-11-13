@@ -3,7 +3,7 @@
 Disusun oleh **Bima Gunawan**, NPM 50423276, kelas 4IA24 (Praktikum Rekayasa Perangkat Lunak 2).
 
 Aplikasi desktop (Java Swing) untuk kedai ramen, dikerjakan bertahap per pertemuan praktikum RPL2.
-Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibernate** sebagai ORM (Pertemuan 4).
+Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), **Hibernate** sebagai ORM (Pertemuan 4), lalu **Spring** yang mengelola Hibernate lewat DAO (Pertemuan 5).
 
 ## 🪜 Tahapan
 
@@ -13,7 +13,7 @@ Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibern
 | 2 | **OOP**: Encapsulation, Inheritance, Polymorphism | paket `id.ramenku.oop` (lihat [README-OOP.md](README-OOP.md)) |
 | 3 | **Login**, tiga fitur (**Menu dan Resep**, **Stok Bahan**, **Penjualan**) dengan **JDBC ke MySQL**, dan laporan **JasperReports** (laporan stok dan struk, PDF) | paket `id.ramenku`, `id.ramenku.data`, `id.ramenku.ui`, `id.ramenku.laporan`; basis data `ramenku_db` |
 | 4 | **Hibernate (ORM)**: lapisan data dipindah dari JDBC ke Hibernate (entitas, HQL, transaksi) | paket `id.ramenku.data` (entitas, DAO, `HibernateUtil`) |
-| 5 | **Spring Java**: AOP, Dependency Injection, fitur dan arsitektur Spring | akan diisi setelah pertemuan berlangsung |
+| 5 | **Spring Java**: Spring mengelola Hibernate lewat DAO (Dependency Injection, transaksi deklaratif, dan AOP) | paket `id.ramenku.spring` (konfigurasi, konteks, aspek) dan DAO `@Repository` di `id.ramenku.data` |
 | 6 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
 | 7 | Menyusul (materi belum dibahas) | akan diisi setelah pertemuan berlangsung |
 | 8 | **Ujian** praktikum | - |
@@ -22,7 +22,7 @@ Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), lalu **Hibern
 
 ```
 pertemuan-1 .. pertemuan-4/   materi, LP, TP, kode, LA, dan output tiap pertemuan
-src/, pom.xml, database/      proyek RamenKu versi terbaru (Hibernate)
+src/, pom.xml, database/      proyek RamenKu versi terbaru (Spring + Hibernate)
 README-OOP.md                 penjelasan konsep OOP (Pertemuan 2)
 bangun.bat, jalankan.bat,     skrip membangun dan menjalankan aplikasi
 demo-konsol.bat
@@ -80,12 +80,13 @@ Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`da
 src/main/java/id/ramenku/
   Main.java, LoginForm.java, JendelaUtama.java   aplikasi utama (login lalu menu)
   Koneksi.java, Pengguna.java                    pengaturan koneksi MySQL, entitas login
-  data/                                          entitas dan DAO Hibernate (Bahan, Menu, ResepBaris, Nota, ...)
+  data/                                          entitas Hibernate dan DAO @Repository yang dikelola Spring
+  spring/                                        konfigurasi Spring, konteks, dan aspek AOP
   ui/                                            halaman Stok Bahan, Menu dan Resep, Penjualan
   laporan/Laporan.java                           pembuat PDF dengan JasperReports
   oop/                                           kode OOP pertemuan 2 (model, ui, demo konsol)
 src/main/resources/laporan/                      desain laporan (stok_bahan.jrxml, struk.jrxml)
-src/test/java/                                   tes JUnit (OOP, angka, Hibernate ke MySQL)
+src/test/java/                                   tes JUnit (OOP, angka, DAO Spring dan Hibernate ke MySQL)
 database/ramenku_db.sql, diagram-relasi.png      skema, data contoh, dan diagram relasi MySQL
 ```
 
@@ -102,7 +103,7 @@ Pengaturan koneksi bawaan XAMPP (localhost:3306, user `root`, tanpa sandi). Untu
 
 ## 🧪 Pengujian
 
-`mvn test` menjalankan 20 tes otomatis: konsep OOP, pembacaan angka, serta Hibernate dan laporan PDF. Tes database memakai
+`mvn test` menjalankan 20 tes otomatis: konsep OOP, pembacaan angka, serta DAO (Spring dan Hibernate) dan laporan PDF. Tes database memakai
 database sementara `ramenku_uji` (dibuat lalu dihapus sendiri) dan dilewati bila MySQL tidak menyala.
 
 PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut ke GitHub).
