@@ -1,72 +1,74 @@
 package id.ramenku.data;
 
+import id.ramenku.spring.PesanBilaTerpakai;
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.PersistenceContext;
 import java.math.BigDecimal;
 import java.util.List;
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
-/** Akses data menu dan resep lewat Hibernate (fitur Menu dan Resep). */
+/** DAO menu dan resep (fitur Menu dan Resep), dikelola Spring. */
+@Repository
 public class MenuDao {
 
+    @PersistenceContext
+    private EntityManager em;
+
+    @Transactional(readOnly = true)
     public List<Menu> semua() {
-        return HibernateUtil.baca(s -> s.createQuery("from Menu order by nama", Menu.class).list());
+        return em.createQuery("from Menu order by nama", Menu.class).getResultList();
     }
 
+    @Transactional
     public int tambah(Menu m) {
-        HibernateUtil.transaksi("Menu", s -> {
-            s.persist(m);
-            return null;
-        });
+        em.persist(m);
         return m.getId();
     }
 
+    @Transactional
     public void ubah(Menu m) {
-        HibernateUtil.transaksi("Menu", s -> {
-            Menu asli = s.get(Menu.class, m.getId());
-            if (asli == null) throw new IllegalStateException("Menu tidak ditemukan, mungkin sudah dihapus.");
-            asli.setNama(m.getNama());
-            asli.setHarga(m.getHarga());
-            return null;
-        });
+        Menu asli = em.find(Menu.class, m.getId());
+        if (asli == null) throw new IllegalStateException("Menu tidak ditemukan, mungkin sudah dihapus.");
+        asli.setNama(m.getNama());
+        asli.setHarga(m.getHarga());
     }
 
     /** Menghapus menu beserta resepnya. Menu yang sudah pernah terjual tidak bisa dihapus. */
+    @Transactional
+    @PesanBilaTerpakai("Menu ini sudah pernah terjual, jadi tidak dapat dihapus.")
     public void hapus(int id) {
-        HibernateUtil.transaksi("Menu", "Menu ini sudah pernah terjual, jadi tidak dapat dihapus.", s -> {
-            Menu m = s.get(Menu.class, id);
-            if (m != null) s.remove(m);
-            return null;
-        });
+        Menu m = em.find(Menu.class, id);
+        if (m != null) em.remove(m);
     }
 
+    @Transactional(readOnly = true)
     public List<ResepBaris> resep(int menuId) {
-        return HibernateUtil.baca(s -> s.createQuery(
+        return em.createQuery(
                         "select r from ResepBaris r join fetch r.bahan b where r.menu.id = :m order by b.nama", ResepBaris.class)
                 .setParameter("m", menuId)
-                .list());
+                .getResultList();
     }
 
     /** Menambah bahan ke resep; bila bahan itu sudah ada di resep, jumlahnya diganti. */
+    @Transactional
     public void simpanResep(int menuId, int bahanId, BigDecimal jumlah) {
         if (jumlah == null || jumlah.signum() <= 0) throw new IllegalArgumentException("Jumlah bahan harus lebih dari 0.");
-        HibernateUtil.transaksi("Resep", s -> {
-            ResepBaris ada = s.createQuery(
-                            "from ResepBaris r where r.menu.id = :m and r.bahan.id = :b", ResepBaris.class)
-                    .setParameter("m", menuId)
-                    .setParameter("b", bahanId)
-                    .uniqueResult();
-            if (ada != null) {
-                ada.setJumlah(jumlah);
-            } else {
-                s.persist(new ResepBaris(s.getReference(Menu.class, menuId), s.getReference(Bahan.class, bahanId), jumlah));
-            }
-            return null;
-        });
+        List<ResepBaris> ada = em.createQuery(
+                        "from ResepBaris r where r.menu.id = :m and r.bahan.id = :b", ResepBaris.class)
+                .setParameter("m", menuId)
+                .setParameter("b", bahanId)
+                .getResultList();
+        if (!ada.isEmpty()) {
+            ada.get(0).setJumlah(jumlah);
+        } else {
+            em.persist(new ResepBaris(em.getReference(Menu.class, menuId), em.getReference(Bahan.class, bahanId), jumlah));
+        }
     }
 
+    @Transactional
     public void hapusResep(int resepId) {
-        HibernateUtil.transaksi("Resep", s -> {
-            ResepBaris r = s.get(ResepBaris.class, resepId);
-            if (r != null) s.remove(r);
-            return null;
-        });
+        ResepBaris r = em.find(ResepBaris.class, resepId);
+        if (r != null) em.remove(r);
     }
 }

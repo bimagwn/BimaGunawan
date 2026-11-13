@@ -1,6 +1,7 @@
 package id.ramenku;
 
 import com.formdev.flatlaf.FlatLightLaf;
+import id.ramenku.spring.Konteks;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -14,6 +15,7 @@ public class Main {
         UIManager.put("TextComponent.arc", 10);
         UIManager.put("Component.focusColor", PanelMerek.VERMILION);
         UIManager.put("Component.focusedBorderColor", PanelMerek.VERMILION);
+        new Thread(Konteks::ambil, "spring-awal").start();   // Spring disiapkan sambil halaman login tampil
         SwingUtilities.invokeLater(Main::tampilkanLogin);
     }
 

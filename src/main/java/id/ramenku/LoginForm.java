@@ -1,5 +1,7 @@
 package id.ramenku;
 
+import id.ramenku.data.PenggunaDao;
+import id.ramenku.spring.Konteks;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -120,7 +122,7 @@ public class LoginForm extends JPanel {
         new SwingWorker<Pengguna, Void>() {
             @Override protected Pengguna doInBackground() throws SQLException {
                 try {
-                    return Pengguna.masuk(user, sandi);
+                    return Konteks.bean(PenggunaDao.class).masuk(user, sandi);
                 } finally {
                     Arrays.fill(sandi, '\0');
                 }

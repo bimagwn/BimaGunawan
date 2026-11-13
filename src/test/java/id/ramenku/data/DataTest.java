@@ -7,6 +7,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.junit.jupiter.api.Assumptions.assumeTrue;
 
 import id.ramenku.laporan.Laporan;
+import id.ramenku.spring.Konteks;
 import java.io.IOException;
 import java.math.BigDecimal;
 import java.nio.file.Files;
@@ -21,7 +22,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 /**
- * Tes JDBC ke MySQL memakai database khusus ramenku_uji yang dibuat dari skrip database/ramenku_db.sql
+ * Tes DAO (Spring dan Hibernate) ke MySQL memakai database khusus ramenku_uji yang dibuat dari skrip database/ramenku_db.sql
  * dan dihapus lagi. Bila MySQL tidak menyala, tes ini dilewati.
  */
 class DataTest {
@@ -29,9 +30,9 @@ class DataTest {
     private static final String ADMIN = "jdbc:mysql://localhost:3306/?useSSL=false&allowPublicKeyRetrieval=true";
     private static boolean siap;
 
-    private final BahanDao bahanDao = new BahanDao();
-    private final MenuDao menuDao = new MenuDao();
-    private final PenjualanDao penjualanDao = new PenjualanDao();
+    private BahanDao bahanDao;
+    private MenuDao menuDao;
+    private PenjualanDao penjualanDao;
 
     @BeforeEach
     void siapkanDatabase() throws Exception {
@@ -52,12 +53,15 @@ class DataTest {
                 if (!perintah.isBlank()) st.execute(perintah);
             }
         }
-        HibernateUtil.tutup();      // buka sambungan baru ke database uji yang baru dibuat
+        Konteks.tutup();            // Spring dibuat ulang dan tersambung ke database uji yang baru dibuat
+        bahanDao = Konteks.bean(BahanDao.class);
+        menuDao = Konteks.bean(MenuDao.class);
+        penjualanDao = Konteks.bean(PenjualanDao.class);
     }
 
     @AfterAll
     static void bersihkan() throws Exception {
-        HibernateUtil.tutup();
+        Konteks.tutup();
         if (!siap) return;
         try (Connection c = DriverManager.getConnection(ADMIN, "root", ""); Statement st = c.createStatement()) {
             st.execute("DROP DATABASE IF EXISTS ramenku_uji");

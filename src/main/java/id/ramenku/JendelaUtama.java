@@ -1,6 +1,6 @@
 package id.ramenku;
 
-import id.ramenku.data.HibernateUtil;
+import id.ramenku.spring.Konteks;
 import id.ramenku.ui.Halaman;
 import id.ramenku.ui.PanelMenuResep;
 import id.ramenku.ui.PanelPenjualan;
@@ -128,10 +128,10 @@ public class JendelaUtama extends JFrame {
         kartu.show(isi, nama);
     }
 
-    /** Menampilkan status koneksi Hibernate di pojok kanan atas. */
+    /** Menampilkan status koneksi database (lewat Spring) di pojok kanan atas. */
     private void cekDatabase() {
         try {
-            HibernateUtil.cekKoneksi();
+            Konteks.cekKoneksi();
             status.setText("Database terhubung   ");
         } catch (RuntimeException e) {
             status.setText("Database belum terhubung   ");

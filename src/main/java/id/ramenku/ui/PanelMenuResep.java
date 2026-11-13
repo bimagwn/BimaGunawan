@@ -6,6 +6,7 @@ import id.ramenku.data.BahanDao;
 import id.ramenku.data.Menu;
 import id.ramenku.data.MenuDao;
 import id.ramenku.data.ResepBaris;
+import id.ramenku.spring.Konteks;
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
@@ -23,8 +24,8 @@ import javax.swing.table.DefaultTableModel;
 /** Fitur Menu dan Resep: kelola menu dan harganya, lalu tentukan bahan yang dipakai per porsi. */
 public class PanelMenuResep extends JPanel implements Halaman {
 
-    private final MenuDao menuDao = new MenuDao();
-    private final BahanDao bahanDao = new BahanDao();
+    private final MenuDao menuDao = Konteks.bean(MenuDao.class);
+    private final BahanDao bahanDao = Konteks.bean(BahanDao.class);
 
     private final DefaultTableModel modelMenu = Ui.model("Menu", "Harga");
     private final JTable tabelMenu = Ui.tabel(modelMenu);

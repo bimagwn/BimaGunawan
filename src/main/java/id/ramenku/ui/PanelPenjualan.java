@@ -8,6 +8,7 @@ import id.ramenku.data.MenuDao;
 import id.ramenku.data.Nota;
 import id.ramenku.data.PenjualanDao;
 import id.ramenku.laporan.Laporan;
+import id.ramenku.spring.Konteks;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.Font;
@@ -38,8 +39,8 @@ public class PanelPenjualan extends JPanel implements Halaman {
 
     private static final DateTimeFormatter WAKTU = DateTimeFormatter.ofPattern("d MMM yyyy, HH:mm", new Locale("id", "ID"));
 
-    private final MenuDao menuDao = new MenuDao();
-    private final PenjualanDao penjualanDao = new PenjualanDao();
+    private final MenuDao menuDao = Konteks.bean(MenuDao.class);
+    private final PenjualanDao penjualanDao = Konteks.bean(PenjualanDao.class);
 
     private final DefaultTableModel modelMenu = Ui.model("Menu", "Harga");
     private final JTable tabelMenu = Ui.tabel(modelMenu);

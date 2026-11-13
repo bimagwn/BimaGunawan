@@ -4,6 +4,7 @@ import id.ramenku.Angka;
 import id.ramenku.data.Bahan;
 import id.ramenku.data.BahanDao;
 import id.ramenku.laporan.Laporan;
+import id.ramenku.spring.Konteks;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
@@ -26,7 +27,7 @@ import javax.swing.table.DefaultTableModel;
 /** Fitur Stok Bahan: tabel persediaan, tambah/ubah/hapus lewat JDBC, dan laporan PDF. */
 public class PanelStokBahan extends JPanel implements Halaman {
 
-    private final BahanDao dao = new BahanDao();
+    private final BahanDao dao = Konteks.bean(BahanDao.class);
     private final DefaultTableModel model = Ui.model("Nama Bahan", "Satuan", "Stok", "Stok Minimal", "Status");
     private final JTable tabel = Ui.tabel(model);
     private List<Bahan> data = new ArrayList<>();

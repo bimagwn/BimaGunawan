@@ -1,8 +1,8 @@
 package id.ramenku.laporan;
 
-import id.ramenku.data.HibernateUtil;
 import id.ramenku.data.Nota;
 import id.ramenku.data.PenjualanDao;
+import id.ramenku.spring.Konteks;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.io.InputStream;
@@ -23,7 +23,7 @@ import net.sf.jasperreports.engine.JasperReport;
 
 /**
  * Pembuat laporan PDF dengan JasperReports. Desain laporan ada di resources/laporan/*.jrxml,
- * datanya diambil dari MySQL memakai koneksi dari Hibernate, hasilnya disimpan di folder laporan.
+ * datanya diambil dari MySQL memakai koneksi dari Spring, hasilnya disimpan di folder laporan.
  */
 public final class Laporan {
 
@@ -48,7 +48,7 @@ public final class Laporan {
 
     /** Membuat PDF struk untuk satu nota yang sudah tersimpan. */
     public static Path struk(int notaId) throws Exception {
-        Nota nota = new PenjualanDao().nota(notaId);
+        Nota nota = Konteks.bean(PenjualanDao.class).nota(notaId);
         Map<String, Object> param = new HashMap<>();
         param.put("NOTA_ID", nota.getId());
         param.put("WAKTU", nota.getWaktu().format(TAMPIL));
@@ -61,8 +61,8 @@ public final class Laporan {
         try (InputStream in = Laporan.class.getResourceAsStream("/laporan/" + desain + ".jrxml")) {
             if (in == null) throw new IOException("Desain laporan " + desain + ".jrxml tidak ditemukan.");
             JasperReport laporan = JasperCompileManager.compileReport(in);
-            // koneksi JDBC dipinjam dari Hibernate, lalu dipakai JasperReports untuk membaca data
-            JasperPrint cetak = HibernateUtil.denganKoneksi(c -> JasperFillManager.fillReport(laporan, param, c));
+            // koneksi JDBC dipinjam dari kolam koneksi Spring, lalu dipakai JasperReports untuk membaca data
+            JasperPrint cetak = Konteks.denganKoneksi(c -> JasperFillManager.fillReport(laporan, param, c));
             Files.createDirectories(FOLDER);
             Path berkas = FOLDER.resolve(namaFile).toAbsolutePath();
             JasperExportManager.exportReportToPdfFile(cetak, berkas.toString());
