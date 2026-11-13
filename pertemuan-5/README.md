@@ -2,7 +2,7 @@
 
 Jumat, 13 November 2026
 
-Ringkasan: Spring Framework (AOP, Dependency Injection, fitur dan arsitektur Spring) yang mengelola Hibernate lewat DAO ke MySQL. Materi, LP, TP, kode, dan output sudah ada, laporan akhir menyusul.
+Ringkasan: Spring Framework (AOP, Dependency Injection, fitur dan arsitektur Spring) yang mengelola Hibernate lewat DAO ke MySQL. Materi, LP, TP, kode, output, dan laporan akhir sudah ada.
 
 | Bagian | Isi |
 |---|---|
@@ -10,7 +10,7 @@ Ringkasan: Spring Framework (AOP, Dependency Injection, fitur dan arsitektur Spr
 | LP 5 | [jawaban.md](LP/jawaban.md) |
 | TP 5 | [jawaban.md](TP/jawaban.md) |
 | Kode | [kode/](kode) |
-| Laporan Akhir (LA 5) | [LA/](LA) (belum ada) |
+| Laporan Akhir (LA 5) | [LA5_BimaGunawan_50423276.docx](LA/LA5_BimaGunawan_50423276.docx) |
 | Output | [output/](output) |
 
 ## Spring di RamenKu
