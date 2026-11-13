@@ -168,6 +168,24 @@ class DataTest {
         assertPdf(Laporan.struk(nota));
     }
 
+    @Test
+    void laporanWordDanExcelTerbentuk() throws Exception {
+        int nota = penjualanDao.simpan(List.of(new ItemPesanan(menu("Ramen Shoyu"), 2)));
+        assertOoxml(Laporan.stokBahan(Laporan.Format.WORD), "word/document.xml");
+        assertOoxml(Laporan.stokBahan(Laporan.Format.EXCEL), "xl/workbook.xml");
+        assertOoxml(Laporan.struk(nota, Laporan.Format.WORD), "word/document.xml");
+        assertOoxml(Laporan.struk(nota, Laporan.Format.EXCEL), "xl/workbook.xml");
+    }
+
+    /** Berkas Word dan Excel (.docx dan .xlsx) adalah arsip ZIP yang berisi bagian utama dokumen. */
+    private static void assertOoxml(Path berkas, String bagianUtama) throws IOException {
+        assertTrue(Files.exists(berkas), "Berkas tidak terbentuk: " + berkas);
+        assertTrue(Files.size(berkas) > 1500, "Berkas terlalu kecil");
+        try (java.util.zip.ZipFile zip = new java.util.zip.ZipFile(berkas.toFile())) {
+            assertTrue(zip.getEntry(bagianUtama) != null, berkas + " tidak memuat " + bagianUtama);
+        }
+    }
+
     private static void assertPdf(Path berkas) throws IOException {
         assertTrue(Files.exists(berkas), "PDF tidak terbentuk: " + berkas);
         byte[] isi = Files.readAllBytes(berkas);

@@ -8,6 +8,7 @@ import id.ramenku.spring.Konteks;
 import java.awt.BorderLayout;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.nio.file.Path;
@@ -37,7 +38,9 @@ public class PanelStokBahan extends JPanel implements Halaman {
     private final JTextField txtStok = Ui.isian();
     private final JTextField txtMinimal = Ui.isian();
     private final JLabel ringkas = Ui.anak(" ");
-    private final JButton btnLaporan = Ui.utama("Cetak Laporan PDF");
+    private final JButton btnPdf = Ui.utama("Unduh PDF");
+    private final JButton btnWord = Ui.biasa("Unduh Word");
+    private final JButton btnExcel = Ui.biasa("Unduh Excel");
 
     public PanelStokBahan() {
         setLayout(new BorderLayout(0, 16));
@@ -51,7 +54,12 @@ public class PanelStokBahan extends JPanel implements Halaman {
         judul.add(Ui.judul("Stok Bahan"), BorderLayout.NORTH);
         judul.add(ringkas, BorderLayout.SOUTH);
         atas.add(judul, BorderLayout.WEST);
-        atas.add(btnLaporan, BorderLayout.EAST);
+        JPanel unduh = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
+        unduh.setOpaque(false);
+        unduh.add(btnPdf);
+        unduh.add(btnWord);
+        unduh.add(btnExcel);
+        atas.add(unduh, BorderLayout.EAST);
         add(atas, BorderLayout.NORTH);
 
         tabel.setDefaultRenderer(Object.class, new DefaultTableCellRenderer() {
@@ -76,7 +84,9 @@ public class PanelStokBahan extends JPanel implements Halaman {
         tabel.getSelectionModel().addListSelectionListener(e -> {
             if (!e.getValueIsAdjusting()) isiFormDariBaris();
         });
-        btnLaporan.addActionListener(e -> cetakLaporan());
+        btnPdf.addActionListener(e -> unduhLaporan(Laporan.Format.PDF));
+        btnWord.addActionListener(e -> unduhLaporan(Laporan.Format.WORD));
+        btnExcel.addActionListener(e -> unduhLaporan(Laporan.Format.EXCEL));
     }
 
     private JPanel panelForm() {
@@ -180,25 +190,33 @@ public class PanelStokBahan extends JPanel implements Halaman {
         kosongkan();
     }
 
-    private void cetakLaporan() {
-        btnLaporan.setEnabled(false);
+    /** Membuat laporan stok dalam format yang dipilih (PDF, Word, atau Excel), lalu membukanya. */
+    private void unduhLaporan(Laporan.Format format) {
+        aturTombolUnduh(false);
         new SwingWorker<Path, Void>() {
             @Override protected Path doInBackground() throws Exception {
-                return Laporan.stokBahan();
+                return Laporan.stokBahan(format);
             }
 
             @Override protected void done() {
-                btnLaporan.setEnabled(true);
+                aturTombolUnduh(true);
                 Ui.coba(PanelStokBahan.this, () -> {
-                    Path pdf;
+                    Path berkas;
                     try {
-                        pdf = get();
+                        berkas = get();
                     } catch (java.util.concurrent.ExecutionException e) {
                         throw e.getCause() instanceof Exception ? (Exception) e.getCause() : e;
                     }
-                    Laporan.buka(pdf);
+                    Laporan.buka(berkas);
+                    Ui.info(PanelStokBahan.this, "Laporan " + format.getNama() + " tersimpan di:\n" + berkas);
                 });
             }
         }.execute();
+    }
+
+    private void aturTombolUnduh(boolean aktif) {
+        btnPdf.setEnabled(aktif);
+        btnWord.setEnabled(aktif);
+        btnExcel.setEnabled(aktif);
     }
 }

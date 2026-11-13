@@ -113,13 +113,17 @@
                 <textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
             </textField>
             <textField pattern="#,##0.##">
-                <reportElement x="285" y="0" width="80" height="24"/>
+                <reportElement x="285" y="0" width="80" height="24">
+                    <property name="net.sf.jasperreports.export.xls.pattern" value="General"/>
+                </reportElement>
                 <box rightPadding="8"><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
             </textField>
             <textField pattern="#,##0.##">
-                <reportElement x="365" y="0" width="80" height="24"/>
+                <reportElement x="365" y="0" width="80" height="24">
+                    <property name="net.sf.jasperreports.export.xls.pattern" value="General"/>
+                </reportElement>
                 <box rightPadding="8"><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{stok_minimal}]]></textFieldExpression>

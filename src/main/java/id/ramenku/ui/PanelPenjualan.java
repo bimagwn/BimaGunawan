@@ -157,11 +157,17 @@ public class PanelPenjualan extends JPanel implements Halaman {
         belah.setOpaque(false);
         kartu.add(belah, BorderLayout.CENTER);
 
-        JButton ulang = Ui.utama("Cetak Ulang Struk");
-        ulang.addActionListener(e -> Ui.coba(this, this::cetakUlang));
-        JPanel aksi = new JPanel(new FlowLayout(FlowLayout.RIGHT, 0, 0));
+        JButton strukPdf = Ui.utama("Unduh Struk PDF");
+        JButton strukWord = Ui.biasa("Unduh Struk Word");
+        JButton strukExcel = Ui.biasa("Unduh Struk Excel");
+        strukPdf.addActionListener(e -> Ui.coba(this, () -> unduhStruk(Laporan.Format.PDF)));
+        strukWord.addActionListener(e -> Ui.coba(this, () -> unduhStruk(Laporan.Format.WORD)));
+        strukExcel.addActionListener(e -> Ui.coba(this, () -> unduhStruk(Laporan.Format.EXCEL)));
+        JPanel aksi = new JPanel(new FlowLayout(FlowLayout.RIGHT, 8, 0));
         aksi.setOpaque(false);
-        aksi.add(ulang);
+        aksi.add(strukPdf);
+        aksi.add(strukWord);
+        aksi.add(strukExcel);
         kartu.add(aksi, BorderLayout.SOUTH);
 
         tabelRiwayat.getSelectionModel().addListSelectionListener(e -> {
@@ -288,9 +294,12 @@ public class PanelPenjualan extends JPanel implements Halaman {
         }
     }
 
-    private void cetakUlang() throws Exception {
+    /** Membuat ulang struk nota yang dipilih dalam format PDF, Word, atau Excel, lalu membukanya. */
+    private void unduhStruk(Laporan.Format format) throws Exception {
         int baris = tabelRiwayat.getSelectedRow();
         if (baris < 0) throw new IllegalStateException("Pilih nota di tabel riwayat terlebih dahulu.");
-        Laporan.buka(Laporan.struk(riwayat.get(baris).getId()));
+        Path berkas = Laporan.struk(riwayat.get(baris).getId(), format);
+        Laporan.buka(berkas);
+        Ui.info(this, "Struk " + format.getNama() + " tersimpan di:\n" + berkas);
     }
 }
