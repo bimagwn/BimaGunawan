@@ -38,9 +38,9 @@ public class PanelStokBahan extends JPanel implements Halaman {
     private final JTextField txtStok = Ui.isian();
     private final JTextField txtMinimal = Ui.isian();
     private final JLabel ringkas = Ui.anak(" ");
-    private final JButton btnPdf = Ui.utama("Unduh PDF");
-    private final JButton btnWord = Ui.biasa("Unduh Word");
-    private final JButton btnExcel = Ui.biasa("Unduh Excel");
+    private final JButton btnPdf = Ui.tombolUnduh("Unduh PDF", "PDF");
+    private final JButton btnWord = Ui.tombolUnduh("Unduh Word", "WORD");
+    private final JButton btnExcel = Ui.tombolUnduh("Unduh Excel", "EXCEL");
 
     public PanelStokBahan() {
         setLayout(new BorderLayout(0, 16));

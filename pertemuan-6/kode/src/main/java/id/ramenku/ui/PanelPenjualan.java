@@ -157,9 +157,9 @@ public class PanelPenjualan extends JPanel implements Halaman {
         belah.setOpaque(false);
         kartu.add(belah, BorderLayout.CENTER);
 
-        JButton strukPdf = Ui.utama("Unduh Struk PDF");
-        JButton strukWord = Ui.biasa("Unduh Struk Word");
-        JButton strukExcel = Ui.biasa("Unduh Struk Excel");
+        JButton strukPdf = Ui.tombolUnduh("Unduh Struk PDF", "PDF");
+        JButton strukWord = Ui.tombolUnduh("Unduh Struk Word", "WORD");
+        JButton strukExcel = Ui.tombolUnduh("Unduh Struk Excel", "EXCEL");
         strukPdf.addActionListener(e -> Ui.coba(this, () -> unduhStruk(Laporan.Format.PDF)));
         strukWord.addActionListener(e -> Ui.coba(this, () -> unduhStruk(Laporan.Format.WORD)));
         strukExcel.addActionListener(e -> Ui.coba(this, () -> unduhStruk(Laporan.Format.EXCEL)));

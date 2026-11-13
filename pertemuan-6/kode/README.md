@@ -6,6 +6,7 @@ Versi RamenKu pada Pertemuan 6. Laporan JasperReports kini dapat diunduh dalam *
 - `Laporan.stokBahan(Format)` dan `Laporan.struk(notaId, Format)` membuat laporan stok bahan dan struk penjualan sesuai format yang dipilih.
 - Ekspor memakai eksportir bawaan JasperReports: `JasperExportManager` (PDF), `JRDocxExporter` (Word), dan `JRXlsxExporter` (Excel).
 - Halaman **Stok Bahan** memiliki tombol **Unduh PDF**, **Unduh Word**, dan **Unduh Excel**. Tab **Riwayat Nota** memiliki tombol **Unduh Struk PDF**, **Word**, dan **Excel**.
+- Tombol unduh berwarna sesuai jenis berkas (PDF merah, Word biru, Excel hijau) dengan ikon berkas yang digambar lewat Java2D (`Ui.tombolUnduh`).
 - Desain `stok_bahan.jrxml` diberi pola angka khusus untuk Excel agar angka tampil bersih dan tetap tersimpan sebagai angka.
 - Spring, Hibernate, dan MySQL sama seperti Pertemuan 5. Tes bertambah menjadi 21 (ada tes pembuatan berkas Word dan Excel).
 
