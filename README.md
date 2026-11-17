@@ -40,7 +40,7 @@ Praktikum Rekayasa Perangkat Lunak 2 berlangsung setiap hari Jumat pagi.
 | 3 | Jumat, 30 Oktober 2026 | MVC Java: login dan JDBC | LP 3, TP 3, LA 3 |
 | 4 | Jumat, 6 November 2026 | ORM Java: Hibernate | LP 4, TP 4, LA 4 |
 | 5 | Jumat, 13 November 2026 | Spring Java | LP 5, TP 5, LA 5 |
-| 6 | Jumat, 20 November 2026 | JasperReports (PDF, Word, Excel) | - |
+| 6 | Jumat, 20 November 2026 | JasperReports (PDF, Word, Excel) | LP 6 |
 | 7 | Jumat, 27 November 2026 | Menyusul | - |
 | 8 | Jumat, 4 Desember 2026 | Ujian | - |
 
@@ -55,7 +55,7 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP](pertemuan-3/LP/jawaban.md) | [TP](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [lihat output](pertemuan-3/output) |
 | 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [lihat output](pertemuan-4/output) |
 | 5 | [Spring Java](pertemuan-5) | [PPT](pertemuan-5/materi/PPT_Pertemuan5_Spring.pdf) | [LP](pertemuan-5/LP/jawaban.md) | [TP](pertemuan-5/TP/jawaban.md) | [kode](pertemuan-5/kode) | [LA 5](pertemuan-5/LA/LA5_BimaGunawan_50423276.docx) | [lihat output](pertemuan-5/output) |
-| 6 | [JasperReports](pertemuan-6) | - | - | - | [kode](pertemuan-6/kode) | - | [lihat output](pertemuan-6/output) |
+| 6 | [JasperReports](pertemuan-6) | - | [LP](pertemuan-6/LP/jawaban.md) | - | [kode](pertemuan-6/kode) | - | [lihat output](pertemuan-6/output) |
 | 7 | [Menyusul](pertemuan-7) | - | - | - | - | - | - |
 | 8 | [Ujian](pertemuan-8) | - | - | - | - | - | - |
 

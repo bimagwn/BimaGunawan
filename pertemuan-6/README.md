@@ -2,12 +2,12 @@
 
 Jumat, 20 November 2026
 
-Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga format, yaitu PDF, Word, dan Excel, dari satu desain laporan yang sama. Kode dan output sudah ada, materi dan tugas lainnya menyusul.
+Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga format, yaitu PDF, Word, dan Excel, dari satu desain laporan yang sama. Kode, output, dan LP sudah ada, materi dan tugas lainnya menyusul.
 
 | Bagian | Isi |
 |---|---|
 | Materi (PPT) | [materi/](materi) (belum ada) |
-| LP 6 | [LP/](LP) (belum ada) |
+| LP 6 | [jawaban.md](LP/jawaban.md) |
 | TP 6 | [TP/](TP) (belum ada) |
 | Kode | [kode/](kode) |
 | Laporan Akhir (LA 6) | [LA/](LA) (belum ada) |
