@@ -1,6 +1,6 @@
 # Output Pertemuan 6: JasperReports (PDF, Word, dan Excel)
 
-[Kembali ke Pertemuan 6](../README.md) | [README utama](../../README.md) | [Kode](../kode)
+[Kembali ke Pertemuan 6](../README.md) | [README utama](../../README.md) | [Kode](../kode) | [Proses dan hasil](proses)
 
 Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain yang sama. Gambar-gambar pertama di bawah adalah hasil nyata dari berkas yang dibuat aplikasi lalu dibuka di Word dan Excel, dengan tampilan sebelum disegarkan. Tampilan terbaru ada di bagian [Tampilan baru](#tampilan-baru), dan berkas aslinya di folder [contoh-hasil](contoh-hasil).
 
