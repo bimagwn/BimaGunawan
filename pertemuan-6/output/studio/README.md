@@ -46,6 +46,8 @@ Langkah demi langkah menampilkan dan mengekspor laporan `stok_bahan.jrxml` langs
 
 ![Jendela simpan](09-simpan-pdf.png)
 
+Proses yang sama untuk struk penjualan ada di [struk/](struk/README.md).
+
 ## D. Hasil ekspor dari Studio
 
 **PDF:** [stok_bahan_studio.pdf](stok_bahan_studio.pdf)
