@@ -12,6 +12,7 @@ Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga form
 | Kode | [kode/](kode) |
 | Laporan Akhir (LA 6) | [LA/](LA) (belum ada) |
 | Output | [output/](output) |
+| Jaspersoft Studio | [jaspersoft/](jaspersoft) (cara memasang, membuka desain, dan alat uji laporan) |
 
 ## Unduh laporan di RamenKu
 

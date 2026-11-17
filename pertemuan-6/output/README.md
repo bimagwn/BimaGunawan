@@ -36,6 +36,10 @@ Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain 
 
 ![Struk penjualan dalam format Excel (.xlsx)](08-struk-excel.png)
 
+**Desain laporan stok bahan (`stok_bahan.jrxml`) dibuka di Jaspersoft Studio Community 6**
+
+![Desain laporan stok bahan dibuka di Jaspersoft Studio Community 6](jaspersoft-studio-desain-stok-bahan.png)
+
 **Hasil mvn test: 21 tes lulus, termasuk pembuatan berkas Word dan Excel**
 
 ![Hasil mvn test: 21 tes lulus, termasuk pembuatan berkas Word dan Excel](10-hasil-tes.png)

@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/banner-ramenku-hidup.svg" alt="RamenKu, aplikasi desktop kedai ramen" width="100%">
+</p>
+
 # 🍜 RamenKu
 
 Disusun oleh **Bima Gunawan**, NPM 50423276, kelas 4IA24 (Praktikum Rekayasa Perangkat Lunak 2).
@@ -21,7 +25,8 @@ Satu proyek yang terus bertambah: **JDBC ke MySQL** (Pertemuan 3), **Hibernate**
 ## 📁 Struktur repo
 
 ```
-pertemuan-1 .. pertemuan-4/   materi, LP, TP, kode, LA, dan output tiap pertemuan
+pertemuan-1 .. pertemuan-8/   materi, LP, TP, kode, LA, dan output tiap pertemuan
+assets/                       banner animasi pada README ini
 src/, pom.xml, database/      proyek RamenKu versi terbaru (Spring + Hibernate)
 README-OOP.md                 penjelasan konsep OOP (Pertemuan 2)
 bangun.bat, jalankan.bat,     skrip membangun dan menjalankan aplikasi
