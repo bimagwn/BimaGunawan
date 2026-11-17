@@ -28,4 +28,8 @@ Satu desain laporan JasperReports (`.jrxml`) diekspor ke tiga format memakai eks
 - Tab **Riwayat Nota** pada halaman **Penjualan**: tombol **Unduh Struk PDF**, **Word**, dan **Excel** untuk nota yang dipilih.
 - Hasil tersimpan di folder `laporan` dan langsung dibuka. Contoh hasilnya ada di [output/contoh-hasil](output/contoh-hasil).
 
+## Tampilan baru: tema Kedai
+
+Selain laporan, tampilan aplikasi ditambah satu tema baru. **Klasik** (tampilan lama) tetap ada, dan **Kedai** memakai warna bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Berpindah tema lewat tombol **Tema** di halaman login atau bilah atas, dan pilihannya diingat di tiap komputer. Tangkapan layarnya ada di [output/tampilan-baru](output/tampilan-baru).
+
 [Kembali ke README utama](../README.md)

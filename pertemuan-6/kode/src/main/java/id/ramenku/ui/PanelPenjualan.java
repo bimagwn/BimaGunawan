@@ -115,7 +115,7 @@ public class PanelPenjualan extends JPanel implements Halaman {
         barisTotal.setOpaque(false);
         barisTotal.add(Ui.kecil("TOTAL"), BorderLayout.WEST);
         total.setFont(new Font("Georgia", Font.BOLD, 26));
-        total.setForeground(Ui.VERMILION);
+        total.setForeground(Ui.AKSEN);
         total.setHorizontalAlignment(SwingConstants.RIGHT);
         barisTotal.add(total, BorderLayout.EAST);
         bawah.add(barisTotal, BorderLayout.NORTH);

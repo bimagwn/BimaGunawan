@@ -31,13 +31,90 @@ import javax.swing.table.DefaultTableModel;
 /** Tampilan dan perkakas bersama untuk semua halaman: warna, tabel, tombol, dan kotak pesan. */
 public final class Ui {
 
-    public static final Color TINTA = new Color(0x1F2430);
-    public static final Color KERTAS = new Color(0xF7F4EF);
-    public static final Color VERMILION = new Color(0xD94A38);
-    public static final Color ABU = new Color(0x6B7080);
-    public static final Color GARIS = new Color(0xE3DED5);
+    /** Dua tema tampilan: Klasik (tampilan lama, terang) dan Kedai (krim kaldu, cokelat shoyu, dan oranye miso). */
+    public enum Tema {
+        KLASIK("Klasik"), KEDAI("Kedai");
+
+        private final String nama;
+
+        Tema(String nama) {
+            this.nama = nama;
+        }
+
+        public String getNama() {
+            return nama;
+        }
+
+        public Tema lainnya() {
+            return this == KEDAI ? KLASIK : KEDAI;
+        }
+    }
+
+    /** Tema yang sedang dipakai; diubah lewat {@link #pakaiTema(Tema)} sebelum jendela dibuat. */
+    public static Tema tema = Tema.KLASIK;
+
+    public static Color TINTA;          // warna teks utama
+    public static Color KERTAS;         // latar halaman
+    public static Color VERMILION;      // peringatan dan galat
+    public static Color ABU;            // teks pendukung
+    public static Color GARIS;          // garis tipis dan bingkai
+    public static Color KARTU;          // latar kartu dan tabel
+    public static Color AKSEN;          // tombol utama dan penekanan
+    public static Color TEKS_AKSEN;     // teks di atas tombol utama
+    public static Color HEADER;         // latar bilah atas dan kepala tabel
+    public static Color HEADER_TEKS;    // teks kepala tabel
+    public static Color HEADER_JUDUL;   // judul pada bilah atas
+    public static Color HEADER_ABU;     // keterangan pada bilah atas
+    public static Color SELEKSI;        // baris tabel terpilih
+    public static Color JUDUL;          // judul halaman
+
+    static {
+        pakaiTema(Tema.KLASIK);
+    }
 
     private Ui() {}
+
+    /** Mengisi semua warna tampilan sesuai tema. Panggil sebelum membuat jendela baru. */
+    public static void pakaiTema(Tema t) {
+        tema = t;
+        if (t == Tema.KEDAI) {
+            // bahan ramen: krim kaldu, cokelat shoyu, oranye miso, kuning mi
+            TINTA = new Color(0x2E1C14);
+            KERTAS = new Color(0xF4EBDC);
+            VERMILION = new Color(0xC0392B);
+            ABU = new Color(0x8B7360);
+            GARIS = new Color(0xE3D3BA);
+            KARTU = new Color(0xFFFBF3);
+            AKSEN = new Color(0xDD8A2D);
+            TEKS_AKSEN = new Color(0x2A1608);
+            HEADER = new Color(0x2B1A12);
+            HEADER_TEKS = new Color(0xF2C56B);
+            HEADER_JUDUL = new Color(0xFBEEDA);
+            HEADER_ABU = new Color(0xBFA48C);
+            SELEKSI = new Color(0xFBE6C0);
+            JUDUL = new Color(0x2B1A12);
+        } else {
+            TINTA = new Color(0x1F2430);
+            KERTAS = new Color(0xF7F4EF);
+            VERMILION = new Color(0xD94A38);
+            ABU = new Color(0x6B7080);
+            GARIS = new Color(0xE3DED5);
+            KARTU = Color.WHITE;
+            AKSEN = new Color(0xD94A38);
+            TEKS_AKSEN = Color.WHITE;
+            HEADER = new Color(0x1F2430);
+            HEADER_TEKS = Color.WHITE;
+            HEADER_JUDUL = Color.WHITE;
+            HEADER_ABU = new Color(0xB8BDC9);
+            SELEKSI = new Color(0xFBE3DF);
+            JUDUL = new Color(0x1F2430);
+        }
+    }
+
+    /** Benar bila tema Kedai (tampilan baru) yang aktif. */
+    public static boolean baru() {
+        return tema == Tema.KEDAI;
+    }
 
     /** Pekerjaan yang boleh melempar galat; galatnya ditampilkan oleh coba(). */
     @FunctionalInterface
@@ -85,10 +162,13 @@ public final class Ui {
 
     public static JButton utama(String teks) {
         JButton b = new JButton(teks);
-        b.setBackground(VERMILION);
-        b.setForeground(Color.WHITE);
+        b.setBackground(AKSEN);
+        b.setForeground(TEKS_AKSEN);
         b.setFont(b.getFont().deriveFont(Font.BOLD, 13f));
         b.setFocusPainted(false);
+        if (baru()) {
+            b.putClientProperty("FlatLaf.style", "hoverBackground: #EB9A44; pressedBackground: #C2711F; borderWidth: 0");
+        }
         b.setPreferredSize(new Dimension(b.getPreferredSize().width + 16, 36));
         return b;
     }
@@ -127,7 +207,7 @@ public final class Ui {
         return b;
     }
 
-    private static String hex(Color c) {
+    public static String hex(Color c) {
         return String.format("#%02X%02X%02X", c.getRed(), c.getGreen(), c.getBlue());
     }
 
@@ -191,8 +271,8 @@ public final class Ui {
 
     public static JLabel judul(String teks) {
         JLabel l = new JLabel(teks);
-        l.setFont(new Font("Georgia", Font.BOLD, 24));
-        l.setForeground(TINTA);
+        l.setFont(new Font("Georgia", baru() ? Font.PLAIN : Font.BOLD, baru() ? 28 : 24));
+        l.setForeground(JUDUL);
         return l;
     }
 
@@ -219,7 +299,7 @@ public final class Ui {
     /** Kartu putih berbingkai tipis, tempat kelompok isian atau tabel diletakkan. */
     public static JPanel kartu(LayoutManager tata) {
         JPanel p = new JPanel(tata);
-        p.setBackground(Color.WHITE);
+        p.setBackground(KARTU);
         p.setBorder(BorderFactory.createCompoundBorder(new LineBorder(GARIS, 1, true), BorderFactory.createEmptyBorder(16, 16, 16, 16)));
         return p;
     }
@@ -258,13 +338,17 @@ public final class Ui {
         t.setShowHorizontalLines(true);
         t.setGridColor(GARIS);
         t.setFillsViewportHeight(true);
-        t.setSelectionBackground(new Color(0xFBE3DF));
+        t.setSelectionBackground(SELEKSI);
         t.setSelectionForeground(TINTA);
+        if (baru()) {
+            t.setBackground(KARTU);
+            t.setForeground(TINTA);
+        }
         t.setIntercellSpacing(new Dimension(0, 1));
         t.getTableHeader().setReorderingAllowed(false);
         t.getTableHeader().setPreferredSize(new Dimension(0, 34));
-        t.getTableHeader().setBackground(TINTA);
-        t.getTableHeader().setForeground(Color.WHITE);
+        t.getTableHeader().setBackground(HEADER);
+        t.getTableHeader().setForeground(HEADER_TEKS);
         t.getTableHeader().setFont(t.getTableHeader().getFont().deriveFont(Font.BOLD, 12f));
         t.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         return t;
@@ -273,7 +357,7 @@ public final class Ui {
     public static JScrollPane gulir(JTable t) {
         JScrollPane s = new JScrollPane(t);
         s.setBorder(new LineBorder(GARIS, 1, true));
-        s.getViewport().setBackground(Color.WHITE);
+        s.getViewport().setBackground(KARTU);
         return s;
     }
 }

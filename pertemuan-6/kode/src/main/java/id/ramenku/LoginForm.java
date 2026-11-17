@@ -2,6 +2,7 @@ package id.ramenku;
 
 import id.ramenku.data.PenggunaDao;
 import id.ramenku.spring.Konteks;
+import id.ramenku.ui.Ui;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
@@ -23,11 +24,6 @@ import javax.swing.SwingWorker;
 
 /** Halaman login: panel merek di kiri, form USERNAME dan PASSWORD di kanan. */
 public class LoginForm extends JPanel {
-
-    private static final Color TINTA = PanelMerek.TINTA;
-    private static final Color VERMILION = PanelMerek.VERMILION;
-    private static final Color KERTAS = PanelMerek.KERTAS;
-    private static final Color ABU = new Color(0x6B7080);
 
     private final JLabel jLabel1 = new JLabel("Selamat datang");
     private final JLabel jLabel2 = new JLabel("USERNAME");
@@ -52,21 +48,21 @@ public class LoginForm extends JPanel {
 
     private JPanel panelForm() {
         JPanel luar = new JPanel(new GridBagLayout());
-        luar.setBackground(KERTAS);
+        luar.setBackground(Ui.KERTAS);
 
         JPanel f = new JPanel();
         f.setOpaque(false);
         f.setLayout(new BoxLayout(f, BoxLayout.Y_AXIS));
-        f.setPreferredSize(new Dimension(300, 340));
+        f.setPreferredSize(new Dimension(300, 384));
 
-        jLabel1.setFont(new Font("Georgia", Font.BOLD, 28));
-        jLabel1.setForeground(TINTA);
+        jLabel1.setFont(new Font("Georgia", Ui.baru() ? Font.PLAIN : Font.BOLD, Ui.baru() ? 31 : 28));
+        jLabel1.setForeground(Ui.JUDUL);
         JLabel sub = new JLabel("Masuk untuk mengelola kedaimu.");
-        sub.setForeground(ABU);
+        sub.setForeground(Ui.ABU);
 
         for (JLabel l : new JLabel[] {jLabel2, jLabel3}) {
             l.setFont(l.getFont().deriveFont(Font.BOLD, 11f));
-            l.setForeground(ABU);
+            l.setForeground(Ui.ABU);
         }
         txtUsername.putClientProperty("JTextField.placeholderText", "Masukkan username");
         txtPassword.putClientProperty("JTextField.placeholderText", "Masukkan password");
@@ -77,14 +73,17 @@ public class LoginForm extends JPanel {
             t.putClientProperty("JComponent.minimumWidth", 0);
         }
 
-        jButton1.setBackground(VERMILION);
-        jButton1.setForeground(Color.WHITE);
+        jButton1.setBackground(Ui.AKSEN);
+        jButton1.setForeground(Ui.TEKS_AKSEN);
+        if (Ui.baru()) {
+            jButton1.putClientProperty("FlatLaf.style", "hoverBackground: #EB9A44; pressedBackground: #C2711F; borderWidth: 0");
+        }
         jButton1.setFont(jButton1.getFont().deriveFont(Font.BOLD, 13f));
         jButton1.setPreferredSize(new Dimension(300, 42));
         jButton1.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
         jButton1.setFocusPainted(false);
 
-        pesan.setForeground(VERMILION);
+        pesan.setForeground(Ui.VERMILION);
         pesan.setFont(pesan.getFont().deriveFont(12f));
 
         JComponent[] urut = {jLabel1, sub, jLabel2, txtUsername, jLabel3, txtPassword, pesan, jButton1};
@@ -104,6 +103,23 @@ public class LoginForm extends JPanel {
         f.add(pesan);
         f.add(Box.createVerticalStrut(8));
         f.add(jButton1);
+
+        // pilihan tema: Klasik (tampilan lama) atau Kedai
+        JButton tema = new JButton("Tema: " + Ui.tema.getNama() + "  (ganti ke " + Ui.tema.lainnya().getNama() + ")");
+        tema.putClientProperty("JButton.buttonType", "borderless");
+        tema.setForeground(Ui.ABU);
+        tema.setFocusPainted(false);
+        tema.setAlignmentX(LEFT_ALIGNMENT);
+        tema.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        tema.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
+        tema.addActionListener(e -> {
+            java.awt.Window jendela = javax.swing.SwingUtilities.getWindowAncestor(this);
+            Main.gantiTema();
+            jendela.dispose();
+            Main.tampilkanLogin();
+        });
+        f.add(Box.createVerticalStrut(10));
+        f.add(tema);
         luar.add(f);
         return luar;
     }

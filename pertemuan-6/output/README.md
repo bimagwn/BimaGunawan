@@ -44,6 +44,34 @@ Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain 
 
 ![Hasil mvn test: 21 tes lulus, termasuk pembuatan berkas Word dan Excel](10-hasil-tes.png)
 
+## Tampilan baru: tema Kedai
+
+Tampilan lama (tema **Klasik**) tidak dihapus. Aplikasi sekarang punya tombol **Tema** di halaman login dan di bilah atas untuk berpindah antara **Klasik** dan **Kedai**, dan pilihannya diingat. Tema Kedai memakai warna dari bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Semua tangkapan layar di atas adalah tema Klasik, dan berikut tema Kedai.
+
+**Login: mangkuk ramen dilihat dari atas, lengkap dengan mi, telur, naruto, nori, chashu, dan daun bawang**
+
+![Login tema Kedai](tampilan-baru/01-login-kedai.png)
+
+**Beranda**
+
+![Beranda tema Kedai](tampilan-baru/02-beranda-kedai.png)
+
+**Stok Bahan dengan tombol Unduh PDF, Word, dan Excel**
+
+![Stok Bahan tema Kedai](tampilan-baru/03-stok-bahan-kedai.png)
+
+**Menu dan Resep**
+
+![Menu dan Resep tema Kedai](tampilan-baru/04-menu-resep-kedai.png)
+
+**Penjualan: kasir**
+
+![Kasir tema Kedai](tampilan-baru/05-penjualan-kasir-kedai.png)
+
+**Penjualan: riwayat nota dan unduh struk**
+
+![Riwayat nota tema Kedai](tampilan-baru/06-riwayat-nota-kedai.png)
+
 ## Contoh berkas hasil unduhan
 
 | Laporan | PDF | Word | Excel |

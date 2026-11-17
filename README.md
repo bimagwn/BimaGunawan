@@ -43,7 +43,7 @@ Praktikum berlangsung setiap hari Jumat pagi.
 | 3 | 30 Okt 2026 | **MVC**: login dan JDBC | login, tiga fitur (Menu dan Resep, Stok Bahan, Penjualan) dengan JDBC ke MySQL, dan laporan PDF |
 | 4 | 6 Nov 2026 | **ORM**: Hibernate | lapisan data pindah ke Hibernate (entitas, HQL, transaksi) |
 | 5 | 13 Nov 2026 | **Spring** Java | Spring mengelola Hibernate lewat DAO: Dependency Injection, transaksi deklaratif, AOP ([pertemuan-5](pertemuan-5)) |
-| 6 | 20 Nov 2026 | **JasperReports** | laporan diunduh sebagai PDF, Word, dan Excel ([pertemuan-6](pertemuan-6)) |
+| 6 | 20 Nov 2026 | **JasperReports** | laporan diunduh sebagai PDF, Word, dan Excel, plus tema tampilan baru **Kedai** di samping **Klasik** ([pertemuan-6](pertemuan-6)) |
 | 7 | 27 Nov 2026 | menyusul | diisi setelah pertemuan berlangsung ([pertemuan-7](pertemuan-7)) |
 | 8 | 4 Des 2026 | **Ujian** praktikum | [pertemuan-8](pertemuan-8) |
 
@@ -57,6 +57,21 @@ Praktikum berlangsung setiap hari Jumat pagi.
   <tr>
     <td width="50%"><img src="pertemuan-5/output/10-penjualan-kasir-spring.png" alt="Kasir penjualan"><br><sub><b>Penjualan</b>: kasir dan riwayat nota</sub></td>
     <td width="50%"><img src="pertemuan-6/output/01-tombol-unduh-stok-bahan.png" alt="Tombol unduh PDF, Word, Excel"><br><sub><b>Unduh laporan</b> sebagai PDF, Word, atau Excel</sub></td>
+  </tr>
+</table>
+
+### Tema Kedai (mulai Pertemuan 6)
+
+Mulai Pertemuan 6 aplikasi punya dua tema yang bisa dipilih lewat tombol **Tema** (di halaman login dan di bilah atas). **Klasik** adalah tampilan di atas, sedangkan **Kedai** adalah tampilan baru yang warnanya diambil dari bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Pilihannya diingat di tiap komputer.
+
+<table>
+  <tr>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/01-login-kedai.png" alt="Login tema Kedai"><br><sub><b>Login</b> dengan mangkuk ramen dilihat dari atas</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/03-stok-bahan-kedai.png" alt="Stok Bahan tema Kedai"><br><sub><b>Stok Bahan</b> dan tombol unduh PDF, Word, Excel</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/05-penjualan-kasir-kedai.png" alt="Kasir tema Kedai"><br><sub><b>Penjualan</b>: kasir</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/06-riwayat-nota-kedai.png" alt="Riwayat nota tema Kedai"><br><sub><b>Riwayat Nota</b> dan unduh struk</sub></td>
   </tr>
 </table>
 
