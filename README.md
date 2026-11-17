@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner-ramenku-emas.svg" alt="RamenKu" width="100%">
+  <img src="assets/banner-ramenku-final.svg" alt="RamenKu" width="100%">
 </p>
 
 <p align="center">

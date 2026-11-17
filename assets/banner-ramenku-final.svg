@@ -1,0 +1,229 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" width="1200" height="320" role="img" aria-label="RamenKu, Bima Gunawan">
+  <defs>
+    <linearGradient id="latar" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0908"/>
+      <stop offset="0.6" stop-color="#14100d"/>
+      <stop offset="1" stop-color="#1d1410"/>
+    </linearGradient>
+    <radialGradient id="cahaya" cx="0.775" cy="0.66" r="0.42">
+      <stop offset="0" stop-color="#e8a24a" stop-opacity="0.36"/>
+      <stop offset="0.5" stop-color="#b8692a" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#b8692a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="emas" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#f6e6c4"/>
+      <stop offset="0.5" stop-color="#e2bd7a"/>
+      <stop offset="1" stop-color="#b98a45"/>
+    </linearGradient>
+    <linearGradient id="garisEmas" gradientUnits="userSpaceOnUse" x1="76" y1="0" x2="420" y2="0">
+      <stop offset="0" stop-color="#e2bd7a" stop-opacity="0"/>
+      <stop offset="0.25" stop-color="#e2bd7a"/>
+      <stop offset="1" stop-color="#e2bd7a" stop-opacity="0.1"/>
+    </linearGradient>
+    <linearGradient id="sorot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#fffaf0" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fffaf0" stop-opacity="0.8"/>
+      <stop offset="1" stop-color="#fffaf0" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="badan" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#2a1d16"/>
+      <stop offset="1" stop-color="#0e0a08"/>
+    </linearGradient>
+    <radialGradient id="kaldu" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0" stop-color="#f0b45a"/>
+      <stop offset="0.7" stop-color="#b8692a"/>
+      <stop offset="1" stop-color="#7a3d14"/>
+    </radialGradient>
+    <linearGradient id="uapGrad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#fff3d9" stop-opacity="0.6"/>
+      <stop offset="1" stop-color="#fff3d9" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="kuah"><ellipse cx="930" cy="201" rx="129" ry="18"/></clipPath>
+    <clipPath id="sapu"><rect class="sapu-rect" x="60" y="40" width="540" height="160"/></clipPath>
+    <clipPath id="teks"><text x="72" y="170" font-family="Georgia, 'Times New Roman', serif" font-size="104" letter-spacing="3">RamenKu</text></clipPath>
+    <filter id="lembut" x="-30%" y="-10%" width="160%" height="120%"><feGaussianBlur stdDeviation="2.6"/></filter>
+    <filter id="pendar" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="6"/></filter>
+    <filter id="pijar" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur stdDeviation="1.4"/></filter>
+  </defs>
+
+  <style>
+    /* satu siklus adegan = 12 detik: sumpit turun, mengangkat mi, uap naik, lalu kembali */
+    .cahaya { animation: bernapas 7s ease-in-out infinite; }
+    @keyframes bernapas { 0%,100% { opacity: .7; } 50% { opacity: 1; } }
+
+    /* bingkai dan pelari cahaya */
+    .bingkai { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lukis 3s .2s cubic-bezier(.4,0,.2,1) forwards; }
+    @keyframes lukis { to { stroke-dashoffset: 0; } }
+    .pelari { stroke-dasharray: .07 .93; animation: lari 15s linear 3.4s infinite; opacity: 0; }
+    @keyframes lari { 0% { stroke-dashoffset: 0; opacity: .95; } 100% { stroke-dashoffset: -1; opacity: .95; } }
+
+    /* judul: tersingkap dari kiri, lalu disapu kilau */
+    .sapu-rect { transform-box: fill-box; transform-origin: 0 50%; animation: singkap 2.4s .5s cubic-bezier(.3,.6,.2,1) both; }
+    @keyframes singkap { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+    .judul { animation: naikMasuk 2.2s .4s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes naikMasuk { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: translateY(0); } }
+    .kilau { animation: sapuKilau 8s 3s ease-in-out infinite; transform: translateX(-340px); }
+    @keyframes sapuKilau { 0% { transform: translateX(-340px); } 38%,100% { transform: translateX(640px); } }
+    .garis { stroke-dasharray: 1; stroke-dashoffset: 1; animation: lukis 2.2s 1.6s cubic-bezier(.4,0,.2,1) forwards; }
+    .nama { animation: namaMasuk 2.4s 2s cubic-bezier(.2,.7,.2,1) both; }
+    @keyframes namaMasuk { from { opacity: 0; letter-spacing: 3px; } to { opacity: 1; letter-spacing: 9px; } }
+
+    /* mangkuk muncul */
+    .mangkuk { animation: naikMasuk 2.2s .7s cubic-bezier(.2,.7,.2,1) both; }
+    .kilauTepi { stroke-dasharray: .08 .92; animation: lari 9s linear infinite; }
+
+    /* sumpit */
+    .angkat { animation: gerak 12s infinite; }
+    @keyframes gerak {
+      0%,18%   { transform: translate(16px,-36px); animation-timing-function: cubic-bezier(.45,0,.25,1); }
+      32%,36%  { transform: translate(0,0);        animation-timing-function: cubic-bezier(.4,0,.2,1); }
+      54%,68%  { transform: translate(-6px,-66px); animation-timing-function: cubic-bezier(.45,0,.25,1); }
+      84%,88%  { transform: translate(0,0);        animation-timing-function: cubic-bezier(.4,0,.2,1); }
+      98%,100% { transform: translate(16px,-36px); }
+    }
+    .untai { animation: rentang 12s infinite; transform: scaleY(.25); opacity: 0; }
+    @keyframes rentang {
+      0%,34%  { opacity: 0; transform: scaleY(.25); animation-timing-function: linear; }
+      36%     { opacity: 1; transform: scaleY(.25); animation-timing-function: cubic-bezier(.45,0,.25,1); }
+      54%,68% { opacity: 1; transform: scaleY(3); animation-timing-function: cubic-bezier(.45,0,.25,1); }
+      84%     { opacity: 1; transform: scaleY(.25); animation-timing-function: linear; }
+      87%,100% { opacity: 0; transform: scaleY(.25); }
+    }
+    .ayun { animation: ayun 2.6s ease-in-out infinite; }
+    @keyframes ayun { 0%,100% { transform: rotate(-1.6deg); } 50% { transform: rotate(1.8deg); } }
+    .helai { fill: none; stroke: #f6e0aa; stroke-width: 2.1; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+
+    /* riak kuah */
+    .riak { fill: none; stroke: #ffe3a8; stroke-width: 1.2; opacity: 0; transform-box: fill-box; transform-origin: center; }
+    .r1 { animation: riak1 12s infinite; } .r2 { animation: riak1 12s .5s infinite; }
+    .r3 { animation: riak2 12s infinite; } .r4 { animation: riak2 12s .5s infinite; }
+    @keyframes riak1 { 0%,30% { opacity: 0; transform: scale(.1); } 32% { opacity: .85; transform: scale(.1); } 46%,100% { opacity: 0; transform: scale(1); } }
+    @keyframes riak2 { 0%,84% { opacity: 0; transform: scale(.1); } 85% { opacity: .85; transform: scale(.1); } 98%,100% { opacity: 0; transform: scale(1); } }
+
+    /* uap */
+    .uap { fill: none; stroke: url(#uapGrad); stroke-width: 3.2; stroke-linecap: round; opacity: 0; animation: naik 8s ease-in-out infinite; }
+    .u2 { animation-delay: 2.6s; } .u3 { animation-delay: 5.2s; }
+    @keyframes naik {
+      0%   { transform: translateY(30px); opacity: 0; }
+      25%  { opacity: .9; }
+      100% { transform: translateY(-48px); opacity: 0; }
+    }
+    .gelombang { fill: none; stroke: url(#uapGrad); stroke-width: 4; stroke-linecap: round; opacity: 0; animation: lonjak 12s infinite; }
+    .g2 { animation-delay: .35s; }
+    @keyframes lonjak {
+      0%,34%  { opacity: 0; transform: translateY(34px); }
+      52%     { opacity: 1; transform: translateY(-4px); }
+      80%,100% { opacity: 0; transform: translateY(-62px); }
+    }
+
+    /* mi di dalam kuah, kilap kuning telur, debu emas */
+    .mie { fill: none; stroke: #f3dca4; stroke-opacity: .8; stroke-width: 2.2; stroke-linecap: round; animation: goyang 6s ease-in-out infinite; }
+    .m2 { animation-delay: -2s; stroke-opacity: .55; } .m3 { animation-delay: -4s; stroke-opacity: .7; }
+    @keyframes goyang { 0%,100% { transform: translateX(-4px); } 50% { transform: translateX(4px); } }
+    .kilatTelur { fill: #fff; animation: kedip 5s ease-in-out infinite; }
+    @keyframes kedip { 0%,100% { opacity: .15; } 50% { opacity: .75; } }
+    .debu { fill: #f0d29a; opacity: 0; animation: melayang 11s linear infinite; }
+    .d2 { animation-duration: 13s; animation-delay: 2s; } .d3 { animation-duration: 9s; animation-delay: 4.5s; }
+    .d4 { animation-duration: 12s; animation-delay: 6.5s; } .d5 { animation-duration: 14s; animation-delay: 8.5s; }
+    .d6 { animation-duration: 10s; animation-delay: 1s; } .d7 { animation-duration: 15s; animation-delay: 5s; }
+    .d8 { animation-duration: 11s; animation-delay: 7.5s; }
+    @keyframes melayang {
+      0%   { transform: translate(0,0); opacity: 0; }
+      15%  { opacity: .8; }
+      100% { transform: translate(16px,-200px); opacity: 0; }
+    }
+  </style>
+
+  <rect width="1200" height="320" fill="url(#latar)"/>
+  <rect class="cahaya" width="1200" height="320" fill="url(#cahaya)"/>
+
+  <!-- bingkai tipis dan cahaya yang berkeliling -->
+  <rect class="bingkai" x="16" y="16" width="1168" height="288" rx="3" fill="none" stroke="#d9b36c" stroke-opacity="0.32" stroke-width="1" pathLength="1"/>
+  <rect class="pelari" x="16" y="16" width="1168" height="288" rx="3" fill="none" stroke="#ffe9b8" stroke-width="1.6" stroke-linecap="round" pathLength="1" filter="url(#pijar)"/>
+
+  <!-- teks -->
+  <g clip-path="url(#sapu)">
+    <g class="judul">
+      <text x="72" y="170" font-family="Georgia, 'Times New Roman', serif" font-size="104" font-weight="400" fill="url(#emas)" letter-spacing="3">RamenKu</text>
+      <g clip-path="url(#teks)">
+        <rect class="kilau" x="0" y="60" width="220" height="140" fill="url(#sorot)" transform-origin="0 0"/>
+      </g>
+    </g>
+  </g>
+  <path class="garis" d="M76 204 H420" stroke="url(#garisEmas)" stroke-width="1.6" stroke-linecap="round" fill="none" pathLength="1"/>
+  <text class="nama" x="76" y="244" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="19" fill="#bfa57a" letter-spacing="9">BIMA GUNAWAN</text>
+
+  <!-- debu emas -->
+  <g>
+    <circle class="debu" cx="800" cy="262" r="1.6"/>
+    <circle class="debu d2" cx="1100" cy="270" r="1.3"/>
+    <circle class="debu d3" cx="860" cy="280" r="1.2"/>
+    <circle class="debu d4" cx="1030" cy="268" r="1.8"/>
+    <circle class="debu d5" cx="960" cy="284" r="1.2"/>
+    <circle class="debu d6" cx="900" cy="270" r="1.4"/>
+    <circle class="debu d7" cx="1140" cy="276" r="1.5"/>
+    <circle class="debu d8" cx="760" cy="282" r="1.2"/>
+  </g>
+
+  <g transform="translate(0,-26)">
+    <!-- uap -->
+    <g filter="url(#lembut)">
+      <path class="uap"    d="M900 178 C882 152 918 128 900 100 S884 58 900 30"/>
+      <path class="uap u2" d="M944 178 C962 150 926 124 944 96 S960 54 944 26"/>
+      <path class="uap u3" d="M990 180 C974 156 1004 134 990 108 S978 70 990 44"/>
+      <path class="gelombang"    d="M928 176 C912 150 944 126 928 98 S914 56 928 28"/>
+      <path class="gelombang g2" d="M968 178 C984 152 954 128 968 102 S982 62 968 34"/>
+    </g>
+
+    <!-- mangkuk -->
+    <g class="mangkuk">
+      <ellipse cx="930" cy="318" rx="150" ry="8" fill="#000" opacity="0.5" filter="url(#pendar)"/>
+      <path d="M884 306 L889 322 H971 L976 306 Z" fill="#17100c" stroke="#d9b36c" stroke-opacity="0.55" stroke-width="1.2"/>
+      <path d="M790 200 C792 282 860 310 930 312 C1000 310 1068 282 1070 200 Z" fill="url(#badan)" stroke="#d9b36c" stroke-opacity="0.8" stroke-width="1.5"/>
+      <path d="M799 236 C860 258 1000 258 1061 236" fill="none" stroke="#d9b36c" stroke-opacity="0.5" stroke-width="1.2"/>
+      <path d="M818 266 C870 284 990 284 1042 266" fill="none" stroke="#d9b36c" stroke-opacity="0.28" stroke-width="1"/>
+      <ellipse cx="930" cy="200" rx="140" ry="24" fill="#0c0806" stroke="#e2bd7a" stroke-width="1.6"/>
+      <ellipse class="kilauTepi" cx="930" cy="200" rx="140" ry="24" fill="none" stroke="#fff6df" stroke-width="2.2" stroke-linecap="round" pathLength="1"/>
+      <ellipse cx="930" cy="201" rx="129" ry="18" fill="url(#kaldu)"/>
+
+      <g clip-path="url(#kuah)">
+        <path class="mie"    d="M800 196 q16 -9 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0"/>
+        <path class="mie m2" d="M800 203 q16 -9 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0"/>
+        <path class="mie m3" d="M800 209 q16 -9 32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0 t32 0"/>
+        <ellipse class="riak r1" cx="940" cy="203" rx="124" ry="16"/>
+        <ellipse class="riak r2" cx="940" cy="203" rx="124" ry="16"/>
+        <ellipse class="riak r3" cx="940" cy="203" rx="124" ry="16"/>
+        <ellipse class="riak r4" cx="940" cy="203" rx="124" ry="16"/>
+      </g>
+
+      <ellipse cx="892" cy="199" rx="27" ry="12.5" fill="#f4ecdc"/>
+      <ellipse cx="892" cy="200" rx="11" ry="6" fill="#e8923a"/>
+      <ellipse class="kilatTelur" cx="888" cy="197.5" rx="3.4" ry="1.7"/>
+      <ellipse cx="988" cy="206" rx="22" ry="8" fill="#6e371f"/>
+      <ellipse cx="988" cy="204.5" rx="19" ry="6" fill="#8d4a2b"/>
+      <circle cx="950" cy="195" r="10" fill="#f7f1e6"/>
+      <path d="M950 195 m-6 0 a6 6 0 1 1 6 6" fill="none" stroke="#d86a86" stroke-width="1.8"/>
+      <g fill="#6bbd66">
+        <circle cx="1012" cy="200" r="2.6"/><circle cx="1020" cy="205" r="2.2"/><circle cx="1006" cy="208" r="2.2"/>
+        <circle cx="856" cy="207" r="2.4"/><circle cx="922" cy="210" r="2.2"/><circle cx="968" cy="192" r="2"/>
+      </g>
+
+      <!-- sumpit mengangkat mi -->
+      <g transform="translate(940,196)">
+        <g class="angkat">
+          <g class="untai">
+            <g class="ayun">
+              <path class="helai" d="M-4 0 C-8 8 0 16 -4 24"/>
+              <path class="helai" d="M0 0 C-3 9 4 17 0 24"/>
+              <path class="helai" d="M4 0 C0 8 8 16 4 24"/>
+              <path class="helai" d="M8 0 C4 9 11 15 8 24"/>
+              <path class="helai" d="M12 0 C9 8 16 17 12 24"/>
+            </g>
+          </g>
+          <line x1="-6" y1="-6" x2="168" y2="-78" stroke="#d9b36c" stroke-width="3.6" stroke-linecap="round"/>
+          <line x1="10" y1="0" x2="182" y2="-64" stroke="#bf9654" stroke-width="3.6" stroke-linecap="round"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
