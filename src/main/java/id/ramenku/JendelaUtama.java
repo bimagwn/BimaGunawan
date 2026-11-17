@@ -28,11 +28,8 @@ public class JendelaUtama extends JFrame {
     private final JPanel isi = new JPanel(kartu);
     private final JLabel status = new JLabel();
 
-    private final Pengguna pengguna;
-
     public JendelaUtama(Pengguna pengguna) {
         super("RamenKu");
-        this.pengguna = pengguna;
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
 
@@ -54,13 +51,11 @@ public class JendelaUtama extends JFrame {
     private JPanel batasAtas(Pengguna pengguna) {
         JPanel atas = new JPanel(new BorderLayout());
         atas.setBackground(Ui.HEADER);
-        javax.swing.border.Border isiBorder = BorderFactory.createEmptyBorder(14, 24, 14, 24);
-        atas.setBorder(Ui.baru()
-                ? BorderFactory.createCompoundBorder(BorderFactory.createMatteBorder(0, 0, 2, 0, Ui.AKSEN), isiBorder)
-                : isiBorder);
+        atas.setBorder(BorderFactory.createCompoundBorder(
+                BorderFactory.createMatteBorder(0, 0, 2, 0, Ui.AKSEN), BorderFactory.createEmptyBorder(14, 24, 14, 24)));
         JLabel judul = new JLabel();
         judul.setForeground(Ui.HEADER_JUDUL);
-        judul.setFont(Ui.baru() ? new Font("Georgia", Font.PLAIN, 20) : judul.getFont().deriveFont(Font.BOLD, 18f));
+        judul.setFont(new Font("Georgia", Font.PLAIN, 20));
         judul.setText("RamenKu  |  Halo, " + pengguna.getNama() + " ");
         status.setForeground(Ui.HEADER_ABU);
         JButton keluar = new JButton("Keluar");
@@ -69,18 +64,9 @@ public class JendelaUtama extends JFrame {
             dispose();
             Main.tampilkanLogin();
         });
-        JButton tema = new JButton("Tema: " + Ui.tema.getNama());
-        tema.setFocusPainted(false);
-        tema.setToolTipText("Ganti tampilan ke " + Ui.tema.lainnya().getNama());
-        tema.addActionListener(e -> {
-            Main.gantiTema();
-            dispose();
-            new JendelaUtama(this.pengguna).setVisible(true);
-        });
         JPanel kanan = new JPanel();
         kanan.setOpaque(false);
         kanan.add(status);
-        kanan.add(tema);
         kanan.add(keluar);
         atas.add(judul, BorderLayout.WEST);
         atas.add(kanan, BorderLayout.EAST);
@@ -101,7 +87,7 @@ public class JendelaUtama extends JFrame {
         JPanel tiga = new JPanel(new GridLayout(1, 3, 20, 0));
         tiga.setOpaque(false);
         tiga.add(kotakFitur("Menu dan Resep", "Atur menu, harga, dan bahan yang dipakai per porsi.", "menu"));
-        tiga.add(kotakFitur("Stok Bahan", "Pantau persediaan, tandai yang menipis, cetak laporan PDF.", "stok"));
+        tiga.add(kotakFitur("Stok Bahan", "Pantau persediaan, tandai yang menipis, unduh laporan PDF, Word, dan Excel.", "stok"));
         tiga.add(kotakFitur("Penjualan", "Catat pesanan, simpan nota, dan cetak struk.", "jual"));
         JPanel tengah = new JPanel(new BorderLayout());
         tengah.setOpaque(false);
@@ -112,16 +98,13 @@ public class JendelaUtama extends JFrame {
     }
 
     private JButton kotakFitur(String nama, String keterangan, String tujuan) {
-        String warnaNama = Ui.baru() ? "color:" + Ui.hex(Ui.JUDUL) + ";" : "";
         JButton b = new JButton("<html><div style='text-align:center;width:200px'>"
-                + "<span style='font-size:17px;" + warnaNama + "'><b>" + nama + "</b></span><br><br>"
+                + "<span style='font-size:17px;color:" + Ui.hex(Ui.JUDUL) + "'><b>" + nama + "</b></span><br><br>"
                 + "<span style='color:" + Ui.hex(Ui.ABU) + "'>" + keterangan + "</span></div></html>");
         b.setBackground(Ui.KARTU);
         b.setFocusPainted(false);
-        if (Ui.baru()) {
-            b.putClientProperty("FlatLaf.style",
-                    "borderColor: #E3D3BA; borderWidth: 1; hoverBackground: #FFF1D6; pressedBackground: #FBE6C0; arc: 18");
-        }
+        b.putClientProperty("FlatLaf.style",
+                "borderColor: #E3D3BA; borderWidth: 1; hoverBackground: #FFF1D6; pressedBackground: #FBE6C0; arc: 18");
         b.addActionListener(e -> tampilkan(tujuan));
         return b;
     }

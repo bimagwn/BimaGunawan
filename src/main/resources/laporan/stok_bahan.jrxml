@@ -5,12 +5,13 @@
               name="stok_bahan" pageWidth="595" pageHeight="842" columnWidth="515"
               leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40">
 
-    <style name="Dasar" isDefault="true" fontName="Arial" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+    <style name="Dasar" isDefault="true" forecolor="#2E1C14" fontName="Arial" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
     <style name="Tebal" style="Dasar" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="Judul" style="Dasar" fontName="Georgia" isBold="false" pdfFontName="Times-Roman"/>
     <style name="Status" style="Dasar">
         <conditionalStyle>
             <conditionExpression><![CDATA["MENIPIS".equals($F{status})]]></conditionExpression>
-            <style forecolor="#D94A38" isBold="true" pdfFontName="Helvetica-Bold"/>
+            <style forecolor="#C0392B" isBold="true" pdfFontName="Helvetica-Bold"/>
         </conditionalStyle>
     </style>
 
@@ -32,24 +33,28 @@
     </variable>
 
     <title>
-        <band height="78">
+        <band height="82">
             <staticText>
-                <reportElement style="Tebal" x="0" y="0" width="515" height="30" forecolor="#1F2430"/>
-                <textElement><font size="22" isBold="true"/></textElement>
+                <reportElement style="Judul" mode="Opaque" x="0" y="0" width="515" height="36" forecolor="#FBEEDA" backcolor="#2B1A12"/>
+                <box leftPadding="14"/>
+                <textElement verticalAlignment="Bottom"><font size="24"/></textElement>
                 <text><![CDATA[RamenKu]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Tebal" x="0" y="30" width="515" height="20"/>
-                <textElement><font size="13" isBold="true"/></textElement>
+                <reportElement style="Dasar" mode="Opaque" x="0" y="36" width="280" height="24" forecolor="#F2C56B" backcolor="#2B1A12"/>
+                <box leftPadding="14"/>
+                <textElement verticalAlignment="Middle"><font size="12"/></textElement>
                 <text><![CDATA[Laporan Stok Bahan]]></text>
             </staticText>
             <textField>
-                <reportElement x="0" y="50" width="515" height="16" forecolor="#6B7080"/>
+                <reportElement style="Dasar" mode="Opaque" x="280" y="36" width="235" height="24" forecolor="#BFA48C" backcolor="#2B1A12"/>
+                <box rightPadding="14"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle"><font size="9"/></textElement>
                 <textFieldExpression><![CDATA["Dicetak pada " + $P{TANGGAL}]]></textFieldExpression>
             </textField>
             <line>
-                <reportElement x="0" y="72" width="515" height="2" forecolor="#D94A38"/>
-                <graphicElement><pen lineWidth="2.0" lineColor="#D94A38"/></graphicElement>
+                <reportElement x="0" y="60" width="515" height="3" forecolor="#DD8A2D"/>
+                <graphicElement><pen lineWidth="3.0" lineColor="#DD8A2D"/></graphicElement>
             </line>
         </band>
     </title>
@@ -57,35 +62,35 @@
     <columnHeader>
         <band height="26">
             <staticText>
-                <reportElement style="Tebal" mode="Opaque" x="0" y="0" width="34" height="26" forecolor="#FFFFFF" backcolor="#1F2430"/>
+                <reportElement style="Tebal" mode="Opaque" x="0" y="0" width="34" height="26" forecolor="#F2C56B" backcolor="#2B1A12"/>
                 <box leftPadding="6"/>
                 <textElement verticalAlignment="Middle"/>
                 <text><![CDATA[No]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Tebal" mode="Opaque" x="34" y="0" width="191" height="26" forecolor="#FFFFFF" backcolor="#1F2430"/>
+                <reportElement style="Tebal" mode="Opaque" x="34" y="0" width="191" height="26" forecolor="#F2C56B" backcolor="#2B1A12"/>
                 <textElement verticalAlignment="Middle"/>
                 <text><![CDATA[Nama Bahan]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Tebal" mode="Opaque" x="225" y="0" width="60" height="26" forecolor="#FFFFFF" backcolor="#1F2430"/>
+                <reportElement style="Tebal" mode="Opaque" x="225" y="0" width="60" height="26" forecolor="#F2C56B" backcolor="#2B1A12"/>
                 <textElement verticalAlignment="Middle"/>
                 <text><![CDATA[Satuan]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Tebal" mode="Opaque" x="285" y="0" width="80" height="26" forecolor="#FFFFFF" backcolor="#1F2430"/>
+                <reportElement style="Tebal" mode="Opaque" x="285" y="0" width="80" height="26" forecolor="#F2C56B" backcolor="#2B1A12"/>
                 <box rightPadding="8"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <text><![CDATA[Stok]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Tebal" mode="Opaque" x="365" y="0" width="80" height="26" forecolor="#FFFFFF" backcolor="#1F2430"/>
+                <reportElement style="Tebal" mode="Opaque" x="365" y="0" width="80" height="26" forecolor="#F2C56B" backcolor="#2B1A12"/>
                 <box rightPadding="8"/>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <text><![CDATA[Minimal]]></text>
             </staticText>
             <staticText>
-                <reportElement style="Tebal" mode="Opaque" x="445" y="0" width="70" height="26" forecolor="#FFFFFF" backcolor="#1F2430"/>
+                <reportElement style="Tebal" mode="Opaque" x="445" y="0" width="70" height="26" forecolor="#F2C56B" backcolor="#2B1A12"/>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <text><![CDATA[Status]]></text>
             </staticText>
@@ -96,19 +101,19 @@
         <band height="24">
             <textField>
                 <reportElement x="0" y="0" width="34" height="24"/>
-                <box leftPadding="6"><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
+                <box leftPadding="6"><bottomPen lineWidth="0.5" lineColor="#E3D3BA"/></box>
                 <textElement verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="34" y="0" width="191" height="24"/>
-                <box><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
+                <box><bottomPen lineWidth="0.5" lineColor="#E3D3BA"/></box>
                 <textElement verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement x="225" y="0" width="60" height="24"/>
-                <box><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
+                <box><bottomPen lineWidth="0.5" lineColor="#E3D3BA"/></box>
                 <textElement verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
             </textField>
@@ -116,7 +121,7 @@
                 <reportElement x="285" y="0" width="80" height="24">
                     <property name="net.sf.jasperreports.export.xls.pattern" value="General"/>
                 </reportElement>
-                <box rightPadding="8"><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
+                <box rightPadding="8"><bottomPen lineWidth="0.5" lineColor="#E3D3BA"/></box>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
             </textField>
@@ -124,13 +129,13 @@
                 <reportElement x="365" y="0" width="80" height="24">
                     <property name="net.sf.jasperreports.export.xls.pattern" value="General"/>
                 </reportElement>
-                <box rightPadding="8"><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
+                <box rightPadding="8"><bottomPen lineWidth="0.5" lineColor="#E3D3BA"/></box>
                 <textElement textAlignment="Right" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{stok_minimal}]]></textFieldExpression>
             </textField>
             <textField>
                 <reportElement style="Status" x="445" y="0" width="70" height="24"/>
-                <box><bottomPen lineWidth="0.5" lineColor="#DDDDDD"/></box>
+                <box><bottomPen lineWidth="0.5" lineColor="#E3D3BA"/></box>
                 <textElement textAlignment="Center" verticalAlignment="Middle"/>
                 <textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
             </textField>
@@ -140,7 +145,7 @@
     <pageFooter>
         <band height="24">
             <textField>
-                <reportElement x="0" y="6" width="515" height="14" forecolor="#6B7080"/>
+                <reportElement x="0" y="6" width="515" height="14" forecolor="#8B7360"/>
                 <textElement textAlignment="Right"><font size="8"/></textElement>
                 <textFieldExpression><![CDATA["Halaman " + $V{PAGE_NUMBER}]]></textFieldExpression>
             </textField>

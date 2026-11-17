@@ -2,7 +2,7 @@
 
 [Kembali ke Pertemuan 6](../README.md) | [README utama](../../README.md) | [Kode](../kode)
 
-Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain yang sama. Semua gambar laporan di bawah adalah hasil nyata dari berkas yang dibuat aplikasi lalu dibuka di Word dan Excel. Berkas aslinya ada di folder [contoh-hasil](contoh-hasil).
+Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain yang sama. Gambar-gambar pertama di bawah adalah hasil nyata dari berkas yang dibuat aplikasi lalu dibuka di Word dan Excel, dengan tampilan sebelum disegarkan. Tampilan terbaru ada di bagian [Tampilan baru](#tampilan-baru), dan berkas aslinya di folder [contoh-hasil](contoh-hasil).
 
 **Halaman Stok Bahan dengan tombol Unduh PDF, Unduh Word, dan Unduh Excel**
 
@@ -44,33 +44,41 @@ Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain 
 
 ![Hasil mvn test: 21 tes lulus, termasuk pembuatan berkas Word dan Excel](10-hasil-tes.png)
 
-## Tampilan baru: tema Kedai
+## Tampilan baru
 
-Tampilan lama (tema **Klasik**) tidak dihapus. Aplikasi sekarang punya tombol **Tema** di halaman login dan di bilah atas untuk berpindah antara **Klasik** dan **Kedai**, dan pilihannya diingat. Tema Kedai memakai warna dari bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Semua tangkapan layar di atas adalah tema Klasik, dan berikut tema Kedai.
+Setelah gambar-gambar di atas diambil, tampilan aplikasi dan desain laporan disegarkan dengan warna bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Berikut tampilan terbarunya, dan berkas di [contoh-hasil](contoh-hasil) sudah memakai desain laporan yang baru.
 
 **Login: mangkuk ramen dilihat dari atas, lengkap dengan mi, telur, naruto, nori, chashu, dan daun bawang**
 
-![Login tema Kedai](tampilan-baru/01-login-kedai.png)
+![Login](tampilan-baru/01-login.png)
 
 **Beranda**
 
-![Beranda tema Kedai](tampilan-baru/02-beranda-kedai.png)
+![Beranda](tampilan-baru/02-beranda.png)
 
 **Stok Bahan dengan tombol Unduh PDF, Word, dan Excel**
 
-![Stok Bahan tema Kedai](tampilan-baru/03-stok-bahan-kedai.png)
+![Stok Bahan](tampilan-baru/03-stok-bahan.png)
 
 **Menu dan Resep**
 
-![Menu dan Resep tema Kedai](tampilan-baru/04-menu-resep-kedai.png)
+![Menu dan Resep](tampilan-baru/04-menu-resep.png)
 
 **Penjualan: kasir**
 
-![Kasir tema Kedai](tampilan-baru/05-penjualan-kasir-kedai.png)
+![Kasir](tampilan-baru/05-penjualan-kasir.png)
 
 **Penjualan: riwayat nota dan unduh struk**
 
-![Riwayat nota tema Kedai](tampilan-baru/06-riwayat-nota-kedai.png)
+![Riwayat nota](tampilan-baru/06-riwayat-nota.png)
+
+**Laporan stok bahan (PDF) dengan desain baru**
+
+![Laporan stok bahan PDF](tampilan-baru/07-laporan-stok-pdf.png)
+
+**Struk penjualan (PDF) dengan desain baru**
+
+![Struk penjualan PDF](tampilan-baru/08-struk-pdf.png)
 
 ## Contoh berkas hasil unduhan
 

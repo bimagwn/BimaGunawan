@@ -5,8 +5,9 @@
               name="struk" pageWidth="226" pageHeight="400" columnWidth="202"
               leftMargin="12" rightMargin="12" topMargin="14" bottomMargin="14" isIgnorePagination="true">
 
-    <style name="Dasar" isDefault="true" fontName="Arial" fontSize="9" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+    <style name="Dasar" isDefault="true" forecolor="#2E1C14" fontName="Arial" fontSize="9" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
     <style name="Tebal" style="Dasar" isBold="true" pdfFontName="Helvetica-Bold"/>
+    <style name="Judul" style="Dasar" fontName="Georgia" isBold="false" pdfFontName="Times-Roman"/>
 
     <parameter name="NOTA_ID" class="java.lang.Integer"/>
     <parameter name="WAKTU" class="java.lang.String"/>
@@ -23,35 +24,31 @@
     <field name="subtotal" class="java.math.BigDecimal"/>
 
     <title>
-        <band height="76">
+        <band height="82">
             <staticText>
-                <reportElement style="Tebal" x="0" y="0" width="202" height="22"/>
-                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="16" isBold="true"/></textElement>
-                <text><![CDATA[RAMENKU]]></text>
+                <reportElement style="Judul" mode="Opaque" x="0" y="0" width="202" height="30" forecolor="#FBEEDA" backcolor="#2B1A12"/>
+                <textElement textAlignment="Center" verticalAlignment="Bottom"><font size="17"/></textElement>
+                <text><![CDATA[RamenKu]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="22" width="202" height="12" forecolor="#555555"/>
-                <textElement textAlignment="Center"><font size="8"/></textElement>
+                <reportElement style="Dasar" mode="Opaque" x="0" y="30" width="202" height="16" forecolor="#F2C56B" backcolor="#2B1A12"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"><font size="8"/></textElement>
                 <text><![CDATA[Struk Penjualan]]></text>
             </staticText>
             <line>
-                <reportElement x="0" y="40" width="202" height="1"/>
-                <graphicElement><pen lineWidth="0.75" lineStyle="Dashed"/></graphicElement>
+                <reportElement x="0" y="46" width="202" height="2" forecolor="#DD8A2D"/>
+                <graphicElement><pen lineWidth="2.0" lineColor="#DD8A2D"/></graphicElement>
             </line>
             <textField>
-                <reportElement x="0" y="45" width="202" height="12"/>
+                <reportElement x="0" y="54" width="202" height="12"/>
                 <textElement><font size="8"/></textElement>
                 <textFieldExpression><![CDATA["Nota No. " + $P{NOTA_ID}]]></textFieldExpression>
             </textField>
             <textField>
-                <reportElement x="0" y="57" width="202" height="12"/>
+                <reportElement x="0" y="66" width="202" height="12" forecolor="#8B7360"/>
                 <textElement><font size="8"/></textElement>
                 <textFieldExpression><![CDATA[$P{WAKTU}]]></textFieldExpression>
             </textField>
-            <line>
-                <reportElement x="0" y="72" width="202" height="1"/>
-                <graphicElement><pen lineWidth="0.75" lineStyle="Dashed"/></graphicElement>
-            </line>
         </band>
     </title>
 
@@ -62,11 +59,11 @@
                 <textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
             </textField>
             <textField pattern="0 &apos;x&apos;">
-                <reportElement x="0" y="17" width="30" height="12"/>
+                <reportElement x="0" y="17" width="30" height="12" forecolor="#8B7360"/>
                 <textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
             </textField>
             <textField pattern="&apos;Rp&apos; #,##0">
-                <reportElement x="30" y="17" width="82" height="12"/>
+                <reportElement x="30" y="17" width="82" height="12" forecolor="#8B7360"/>
                 <textFieldExpression><![CDATA[$F{harga_satuan}]]></textFieldExpression>
             </textField>
             <textField pattern="&apos;Rp&apos; #,##0">
@@ -80,8 +77,8 @@
     <summary>
         <band height="70">
             <line>
-                <reportElement x="0" y="3" width="202" height="1"/>
-                <graphicElement><pen lineWidth="0.75" lineStyle="Dashed"/></graphicElement>
+                <reportElement x="0" y="3" width="202" height="1" forecolor="#DD8A2D"/>
+                <graphicElement><pen lineWidth="0.75" lineStyle="Dashed" lineColor="#DD8A2D"/></graphicElement>
             </line>
             <staticText>
                 <reportElement style="Tebal" x="0" y="9" width="70" height="16"/>
@@ -94,8 +91,8 @@
                 <textFieldExpression><![CDATA[$P{TOTAL}]]></textFieldExpression>
             </textField>
             <line>
-                <reportElement x="0" y="32" width="202" height="1"/>
-                <graphicElement><pen lineWidth="0.75" lineStyle="Dashed"/></graphicElement>
+                <reportElement x="0" y="32" width="202" height="1" forecolor="#DD8A2D"/>
+                <graphicElement><pen lineWidth="0.75" lineStyle="Dashed" lineColor="#DD8A2D"/></graphicElement>
             </line>
             <staticText>
                 <reportElement x="0" y="38" width="202" height="12"/>
@@ -103,8 +100,8 @@
                 <text><![CDATA[Terima kasih, sampai jumpa lagi!]]></text>
             </staticText>
             <staticText>
-                <reportElement x="0" y="50" width="202" height="12" forecolor="#888888"/>
-                <textElement textAlignment="Center"><font size="8"/></textElement>
+                <reportElement style="Judul" x="0" y="50" width="202" height="12" forecolor="#DD8A2D"/>
+                <textElement textAlignment="Center"><font size="9"/></textElement>
                 <text><![CDATA[~ RamenKu ~]]></text>
             </staticText>
         </band>

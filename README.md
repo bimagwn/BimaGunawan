@@ -43,37 +43,46 @@ Praktikum berlangsung setiap hari Jumat pagi.
 | 3 | 30 Okt 2026 | **MVC**: login dan JDBC | login, tiga fitur (Menu dan Resep, Stok Bahan, Penjualan) dengan JDBC ke MySQL, dan laporan PDF |
 | 4 | 6 Nov 2026 | **ORM**: Hibernate | lapisan data pindah ke Hibernate (entitas, HQL, transaksi) |
 | 5 | 13 Nov 2026 | **Spring** Java | Spring mengelola Hibernate lewat DAO: Dependency Injection, transaksi deklaratif, AOP ([pertemuan-5](pertemuan-5)) |
-| 6 | 20 Nov 2026 | **JasperReports** | laporan diunduh sebagai PDF, Word, dan Excel, plus tema tampilan baru **Kedai** di samping **Klasik** ([pertemuan-6](pertemuan-6)) |
+| 6 | 20 Nov 2026 | **JasperReports** | laporan diunduh sebagai PDF, Word, dan Excel, dengan tampilan aplikasi dan laporan yang baru ([pertemuan-6](pertemuan-6)) |
 | 7 | 27 Nov 2026 | menyusul | diisi setelah pertemuan berlangsung ([pertemuan-7](pertemuan-7)) |
 | 8 | 4 Des 2026 | **Ujian** praktikum | [pertemuan-8](pertemuan-8) |
 
 ## 🖼️ Tampilan aplikasi
 
-<table>
-  <tr>
-    <td width="50%"><img src="pertemuan-5/output/06-halaman-login.png" alt="Halaman login"><br><sub><b>Login</b> dengan akun terenkripsi SHA-256</sub></td>
-    <td width="50%"><img src="pertemuan-5/output/08-stok-bahan-spring.png" alt="Halaman Stok Bahan"><br><sub><b>Stok Bahan</b>: tambah, ubah, hapus, dan penanda menipis</sub></td>
-  </tr>
-  <tr>
-    <td width="50%"><img src="pertemuan-5/output/10-penjualan-kasir-spring.png" alt="Kasir penjualan"><br><sub><b>Penjualan</b>: kasir dan riwayat nota</sub></td>
-    <td width="50%"><img src="pertemuan-6/output/01-tombol-unduh-stok-bahan.png" alt="Tombol unduh PDF, Word, Excel"><br><sub><b>Unduh laporan</b> sebagai PDF, Word, atau Excel</sub></td>
-  </tr>
-</table>
-
-### Tema Kedai (mulai Pertemuan 6)
-
-Mulai Pertemuan 6 aplikasi punya dua tema yang bisa dipilih lewat tombol **Tema** (di halaman login dan di bilah atas). **Klasik** adalah tampilan di atas, sedangkan **Kedai** adalah tampilan baru yang warnanya diambil dari bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Pilihannya diingat di tiap komputer.
+Sejak Pertemuan 6, RamenKu memakai tampilan baru dengan warna bahan ramen: krim kaldu, cokelat shoyu, oranye miso, dan kuning mi. Laporan PDF, Word, dan Excel ikut memakai warna yang sama.
 
 <table>
   <tr>
-    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/01-login-kedai.png" alt="Login tema Kedai"><br><sub><b>Login</b> dengan mangkuk ramen dilihat dari atas</sub></td>
-    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/03-stok-bahan-kedai.png" alt="Stok Bahan tema Kedai"><br><sub><b>Stok Bahan</b> dan tombol unduh PDF, Word, Excel</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/01-login.png" alt="Halaman login"><br><sub><b>Login</b> dengan mangkuk ramen dilihat dari atas</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/03-stok-bahan.png" alt="Halaman Stok Bahan"><br><sub><b>Stok Bahan</b> dan tombol unduh PDF, Word, Excel</sub></td>
   </tr>
   <tr>
-    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/05-penjualan-kasir-kedai.png" alt="Kasir tema Kedai"><br><sub><b>Penjualan</b>: kasir</sub></td>
-    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/06-riwayat-nota-kedai.png" alt="Riwayat nota tema Kedai"><br><sub><b>Riwayat Nota</b> dan unduh struk</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/05-penjualan-kasir.png" alt="Kasir penjualan"><br><sub><b>Penjualan</b>: kasir</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/06-riwayat-nota.png" alt="Riwayat nota"><br><sub><b>Riwayat Nota</b> dan unduh struk</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/07-laporan-stok-pdf.png" alt="Laporan stok bahan PDF"><br><sub><b>Laporan stok bahan</b> (PDF)</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/tampilan-baru/08-struk-pdf.png" alt="Struk penjualan PDF"><br><sub><b>Struk penjualan</b> (PDF)</sub></td>
   </tr>
 </table>
+
+<details>
+<summary><b>Tampilan sebelumnya (Pertemuan 3 sampai 5)</b></summary>
+
+<br>
+
+<table>
+  <tr>
+    <td width="50%"><img src="pertemuan-5/output/06-halaman-login.png" alt="Halaman login lama"><br><sub><b>Login</b> dengan akun terenkripsi SHA-256</sub></td>
+    <td width="50%"><img src="pertemuan-5/output/08-stok-bahan-spring.png" alt="Halaman Stok Bahan lama"><br><sub><b>Stok Bahan</b>: tambah, ubah, hapus, dan penanda menipis</sub></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="pertemuan-5/output/10-penjualan-kasir-spring.png" alt="Kasir penjualan lama"><br><sub><b>Penjualan</b>: kasir dan riwayat nota</sub></td>
+    <td width="50%"><img src="pertemuan-6/output/01-tombol-unduh-stok-bahan.png" alt="Tombol unduh PDF, Word, Excel lama"><br><sub><b>Unduh laporan</b> sebagai PDF, Word, atau Excel</sub></td>
+  </tr>
+</table>
+
+</details>
 
 Hasil laporan dan tangkapan layar tiap pertemuan ada di folder `output` masing-masing. Contoh berkas hasil unduhan: [laporan stok dan struk (PDF, Word, Excel)](pertemuan-6/output/contoh-hasil).
 

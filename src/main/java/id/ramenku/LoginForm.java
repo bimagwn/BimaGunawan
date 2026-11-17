@@ -53,9 +53,9 @@ public class LoginForm extends JPanel {
         JPanel f = new JPanel();
         f.setOpaque(false);
         f.setLayout(new BoxLayout(f, BoxLayout.Y_AXIS));
-        f.setPreferredSize(new Dimension(300, 384));
+        f.setPreferredSize(new Dimension(300, 340));
 
-        jLabel1.setFont(new Font("Georgia", Ui.baru() ? Font.PLAIN : Font.BOLD, Ui.baru() ? 31 : 28));
+        jLabel1.setFont(new Font("Georgia", Font.PLAIN, 31));
         jLabel1.setForeground(Ui.JUDUL);
         JLabel sub = new JLabel("Masuk untuk mengelola kedaimu.");
         sub.setForeground(Ui.ABU);
@@ -75,9 +75,7 @@ public class LoginForm extends JPanel {
 
         jButton1.setBackground(Ui.AKSEN);
         jButton1.setForeground(Ui.TEKS_AKSEN);
-        if (Ui.baru()) {
-            jButton1.putClientProperty("FlatLaf.style", "hoverBackground: #EB9A44; pressedBackground: #C2711F; borderWidth: 0");
-        }
+        jButton1.putClientProperty("FlatLaf.style", "hoverBackground: #EB9A44; pressedBackground: #C2711F; borderWidth: 0");
         jButton1.setFont(jButton1.getFont().deriveFont(Font.BOLD, 13f));
         jButton1.setPreferredSize(new Dimension(300, 42));
         jButton1.setMaximumSize(new Dimension(Integer.MAX_VALUE, 42));
@@ -103,23 +101,6 @@ public class LoginForm extends JPanel {
         f.add(pesan);
         f.add(Box.createVerticalStrut(8));
         f.add(jButton1);
-
-        // pilihan tema: Klasik (tampilan lama) atau Kedai
-        JButton tema = new JButton("Tema: " + Ui.tema.getNama() + "  (ganti ke " + Ui.tema.lainnya().getNama() + ")");
-        tema.putClientProperty("JButton.buttonType", "borderless");
-        tema.setForeground(Ui.ABU);
-        tema.setFocusPainted(false);
-        tema.setAlignmentX(LEFT_ALIGNMENT);
-        tema.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        tema.setMaximumSize(new Dimension(Integer.MAX_VALUE, 28));
-        tema.addActionListener(e -> {
-            java.awt.Window jendela = javax.swing.SwingUtilities.getWindowAncestor(this);
-            Main.gantiTema();
-            jendela.dispose();
-            Main.tampilkanLogin();
-        });
-        f.add(Box.createVerticalStrut(10));
-        f.add(tema);
         luar.add(f);
         return luar;
     }
