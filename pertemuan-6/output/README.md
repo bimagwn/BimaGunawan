@@ -38,7 +38,7 @@ Laporan JasperReports sekarang dapat diunduh dalam tiga format dari satu desain 
 
 **Desain laporan stok bahan (`stok_bahan.jrxml`) dibuka di Jaspersoft Studio Community 6**
 
-![Desain laporan stok bahan dibuka di Jaspersoft Studio Community 6](jaspersoft-studio-desain-stok-bahan.png)
+![Desain laporan stok bahan dibuka di Jaspersoft Studio Community 6](jaspersoft-studio-desain-terbaru.png)
 
 **Hasil mvn test: 21 tes lulus, termasuk pembuatan berkas Word dan Excel**
 

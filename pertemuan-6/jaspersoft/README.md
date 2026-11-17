@@ -2,7 +2,7 @@
 
 Jaspersoft Studio adalah aplikasi untuk merancang laporan JasperReports secara visual. Desain laporan RamenKu (`stok_bahan.jrxml` dan `struk.jrxml`) bisa dibuka di dalamnya.
 
-![Desain laporan stok bahan di Jaspersoft Studio](../output/jaspersoft-studio-desain-stok-bahan.png)
+![Desain laporan stok bahan di Jaspersoft Studio](../output/jaspersoft-studio-desain-terbaru.png)
 
 ## Memasang
 
