@@ -4,6 +4,8 @@
 
 Urutan pengerjaan laporan dari desain sampai hasil akhir, lengkap dengan keluarannya di setiap langkah. Desain yang dipakai: `stok_bahan.jrxml` dan `struk.jrxml` di [`src/main/resources/laporan`](../../../src/main/resources/laporan).
 
+Proses langkah demi langkah di dalam Jaspersoft Studio (menyambungkan database, Preview, dan ekspor) ada di [output/studio](../studio/README.md).
+
 ## 1. Desain laporan di Jaspersoft Studio
 
 Berkas `stok_bahan.jrxml` dibuka di Jaspersoft Studio Community 6: band Title (bilah judul), Column Header, Detail, Page Footer, dan Summary.

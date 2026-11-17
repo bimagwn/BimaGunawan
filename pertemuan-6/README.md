@@ -12,6 +12,7 @@ Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga form
 | Kode | [kode/](kode) |
 | Laporan Akhir (LA 6) | [LA/](LA) (belum ada) |
 | Output | [output/](output) |
+| Proses di Jaspersoft Studio | [output/studio](output/studio) (menyambungkan database, Preview, dan ekspor langkah demi langkah) |
 | Proses dan hasil | [output/proses](output/proses) (urutan pengerjaan laporan beserta keluarannya) |
 | Jaspersoft Studio | [jaspersoft/](jaspersoft) (cara memasang, membuka desain, dan alat uji laporan) |
 
