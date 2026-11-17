@@ -90,6 +90,7 @@ Hasil laporan dan tangkapan layar tiap pertemuan ada di folder `output` masing-m
 
 ```
 pertemuan-1 .. pertemuan-8/   materi, LP, TP, kode, LA, dan output tiap pertemuan
+manual-book/                  Manual Book RamenKu (Word dan PDF)
 assets/                       banner pada README ini
 src/, pom.xml, database/      proyek RamenKu versi terbaru (Spring + Hibernate)
 README-OOP.md                 penjelasan konsep OOP (Pertemuan 2)
@@ -145,6 +146,15 @@ Pengaturan koneksi bawaan XAMPP (localhost:3306, user `root`, tanpa sandi). Untu
 `mvn test` menjalankan **21 tes otomatis**: konsep OOP, pembacaan angka, serta DAO (Spring dan Hibernate) dan laporan PDF, Word, dan Excel. Tes database memakai database sementara `ramenku_uji` (dibuat lalu dihapus sendiri) dan dilewati bila MySQL tidak menyala.
 
 PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut ke GitHub).
+
+## 📘 Manual Book
+
+Panduan lengkap memasang, memakai, dan memahami RamenKu dari Pertemuan 1 sampai 6: persiapan, panduan tiap fitur, basis data, arsitektur kode, laporan JasperReports, dan Jaspersoft Studio.
+
+| Berkas | Isi |
+|---|---|
+| [Manual Book V2 (PDF)](manual-book/ManualBook_RamenKu_BimaGunawan_50423276_V2.pdf) | 28 halaman, langsung bisa dibaca di GitHub |
+| [Manual Book V2 (Word)](manual-book/ManualBook_RamenKu_BimaGunawan_50423276_V2.docx) | berkas yang bisa diedit |
 
 ## 🧰 Merancang laporan di Jaspersoft Studio
 
