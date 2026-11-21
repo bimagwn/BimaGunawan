@@ -134,7 +134,7 @@ src/
 │   │   ├── PanelMerek.java          panel merek dengan gambar mangkuk ramen
 │   │   ├── Koneksi.java             pengaturan koneksi MySQL
 │   │   ├── Pengguna.java            entitas login
-│   │   ├── Angka.java               pembaca angka dari input
+│   │   ├── Angka.java               membaca dan menampilkan angka gaya Indonesia
 │   │   ├── data/                    entitas Hibernate dan DAO @Repository yang dikelola Spring
 │   │   ├── spring/                  konfigurasi Spring, konteks, dan aspek AOP
 │   │   ├── ui/                      halaman Stok Bahan, Menu dan Resep, Penjualan
