@@ -4,7 +4,7 @@ Makalah praktikum Rekayasa Perangkat Lunak 2 pengganti LA 6, disusun dengan temp
 
 | Berkas | Isi |
 |---|---|
-| [Makalah (PDF)](Makalah_RPL2_Pert6_JasperReports_BimaGunawan_50423276.pdf) | 27 halaman, langsung bisa dibaca di GitHub |
+| [Makalah (PDF)](Makalah_RPL2_Pert6_JasperReports_BimaGunawan_50423276.pdf) | 28 halaman, langsung bisa dibaca di GitHub |
 | [Makalah (Word)](Makalah_RPL2_Pert6_JasperReports_BimaGunawan_50423276.docx) | berkas yang bisa diedit |
 
 [Kembali ke Pertemuan 6](../README.md)
