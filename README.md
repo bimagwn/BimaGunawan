@@ -45,7 +45,7 @@ Praktikum berlangsung setiap hari Jumat pagi.
 | 5 | 13 Nov 2026 | **Spring** Java | Spring mengelola Hibernate lewat DAO: Dependency Injection, transaksi deklaratif, AOP ([pertemuan-5](pertemuan-5)) |
 | 6 | 20 Nov 2026 | **JasperReports** | laporan diunduh sebagai PDF, Word, dan Excel, dengan tampilan aplikasi dan laporan yang baru ([pertemuan-6](pertemuan-6)) |
 | 7 | 27 Nov 2026 | menyusul | diisi setelah pertemuan berlangsung ([pertemuan-7](pertemuan-7)) |
-| 8 | 4 Des 2026 | **Ujian** praktikum | [pertemuan-8](pertemuan-8) |
+| 8 | 4 Des 2026 | **Manual Book** RamenKu | [pertemuan-8](pertemuan-8) |
 
 ## 🖼️ Tampilan aplikasi
 
@@ -89,14 +89,22 @@ Hasil laporan dan tangkapan layar tiap pertemuan ada di folder `output` masing-m
 ## 📁 Struktur repo
 
 ```
-pertemuan-1 .. pertemuan-8/   materi, LP, TP, kode, LA, dan output tiap pertemuan
-manual-book/                  Manual Book RamenKu (Word dan PDF)
-assets/                       banner pada README ini
-src/, pom.xml, database/      proyek RamenKu versi terbaru (Spring + Hibernate)
-README-OOP.md                 penjelasan konsep OOP (Pertemuan 2)
-bangun.bat, jalankan.bat,     skrip membangun dan menjalankan aplikasi
-demo-konsol.bat
-koneksi.properties.contoh     contoh pengaturan koneksi MySQL
+RamenKu/
+├── pertemuan-1/ … pertemuan-8/    materi, LP, TP, kode, LA, dan output tiap pertemuan
+│   └── pertemuan-8/               Manual Book RamenKu (Word dan PDF)
+├── assets/                        banner pada README ini
+├── database/
+│   ├── ramenku_db.sql             skema dan data contoh MySQL
+│   └── diagram-relasi.png         diagram relasi
+├── src/                           proyek RamenKu versi terbaru (Spring + Hibernate)
+├── pom.xml                        konfigurasi Maven dan dependensi
+├── bangun.bat                     membangun aplikasi
+├── jalankan.bat                   menjalankan aplikasi
+├── demo-konsol.bat                menjalankan demo konsol OOP
+├── koneksi.properties.contoh      contoh pengaturan koneksi MySQL
+├── README-OOP.md                  penjelasan konsep OOP (Pertemuan 2)
+├── LICENSE                        lisensi MIT
+└── README.md
 ```
 
 ## 🗄️ Struktur database
@@ -117,17 +125,32 @@ Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`da
 ## 🧩 Susunan kode
 
 ```
-src/main/java/id/ramenku/
-  Main.java, LoginForm.java, JendelaUtama.java   aplikasi utama (login lalu menu)
-  Koneksi.java, Pengguna.java                    pengaturan koneksi MySQL, entitas login
-  data/                                          entitas Hibernate dan DAO @Repository yang dikelola Spring
-  spring/                                        konfigurasi Spring, konteks, dan aspek AOP
-  ui/                                            halaman Stok Bahan, Menu dan Resep, Penjualan
-  laporan/Laporan.java                           pembuat laporan PDF, Word, dan Excel dengan JasperReports
-  oop/                                           kode OOP pertemuan 2 (model, ui, demo konsol)
-src/main/resources/laporan/                      desain laporan (stok_bahan.jrxml, struk.jrxml)
-src/test/java/                                   tes JUnit (OOP, angka, DAO Spring dan Hibernate ke MySQL)
-database/ramenku_db.sql, diagram-relasi.png      skema, data contoh, dan diagram relasi MySQL
+src/
+├── main/
+│   ├── java/id/ramenku/
+│   │   ├── Main.java                aplikasi utama (login lalu menu)
+│   │   ├── LoginForm.java           halaman login
+│   │   ├── JendelaUtama.java        jendela utama dan menu
+│   │   ├── PanelMerek.java          panel merek dengan gambar mangkuk ramen
+│   │   ├── Koneksi.java             pengaturan koneksi MySQL
+│   │   ├── Pengguna.java            entitas login
+│   │   ├── Angka.java               pembaca angka dari input
+│   │   ├── data/                    entitas Hibernate dan DAO @Repository yang dikelola Spring
+│   │   ├── spring/                  konfigurasi Spring, konteks, dan aspek AOP
+│   │   ├── ui/                      halaman Stok Bahan, Menu dan Resep, Penjualan
+│   │   ├── laporan/
+│   │   │   └── Laporan.java         pembuat laporan PDF, Word, dan Excel dengan JasperReports
+│   │   └── oop/                     kode OOP Pertemuan 2
+│   │       ├── model/               Produk, MenuMakanan, MenuMinuman, Pesanan
+│   │       ├── ui/                  jendela OOP
+│   │       └── DemoKonsol.java      demo konsol
+│   └── resources/laporan/
+│       ├── stok_bahan.jrxml         desain laporan stok bahan
+│       └── struk.jrxml              desain struk penjualan
+└── test/java/id/ramenku/            tes JUnit (21 tes)
+    ├── AngkaTest.java
+    ├── data/DataTest.java           DAO Spring dan Hibernate ke MySQL
+    └── oop/KonsepOopTest.java
 ```
 
 ## ▶️ Cara menjalankan
@@ -149,12 +172,12 @@ PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut k
 
 ## 📘 Manual Book
 
-Panduan lengkap memasang, memakai, dan memahami RamenKu dari Pertemuan 1 sampai 6: persiapan, panduan tiap fitur, basis data, arsitektur kode, laporan JasperReports, dan Jaspersoft Studio.
+Manual Book adalah materi Pertemuan 8. Isinya panduan lengkap memasang, memakai, dan memahami RamenKu dari Pertemuan 1 sampai 6: persiapan, panduan tiap fitur, basis data, arsitektur kode, laporan JasperReports, dan Jaspersoft Studio.
 
 | Berkas | Isi |
 |---|---|
-| [Manual Book V2 (PDF)](manual-book/ManualBook_RamenKu_BimaGunawan_50423276_V2.pdf) | 28 halaman, langsung bisa dibaca di GitHub |
-| [Manual Book V2 (Word)](manual-book/ManualBook_RamenKu_BimaGunawan_50423276_V2.docx) | berkas yang bisa diedit |
+| [Manual Book V2 (PDF)](pertemuan-8/ManualBook_RamenKu_BimaGunawan_50423276_V2.pdf) | 28 halaman, langsung bisa dibaca di GitHub |
+| [Manual Book V2 (Word)](pertemuan-8/ManualBook_RamenKu_BimaGunawan_50423276_V2.docx) | berkas yang bisa diedit |
 
 ## 🧰 Merancang laporan di Jaspersoft Studio
 
@@ -171,14 +194,14 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 
 | # | Materi | PPT | LP | TP | Kode | Laporan Akhir | Output |
 |:-:|---|:-:|:-:|:-:|:-:|:-:|:-:|
-| 1 | Rancangan aplikasi ERP | [PPT](pertemuan-1/materi/PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx) | [LP](pertemuan-1/LP/jawaban.md) | [TP](pertemuan-1/TP/jawaban.md) | - | [LA](pertemuan-1/LA/LA1_BimaGunawan_50423276.docx) | dokumen rancangan |
-| 2 | OOP Java | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP](pertemuan-2/LP/jawaban.md) | [TP](pertemuan-2/TP/jawaban.md) | [kode](pertemuan-2/kode) | [LA](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [output](pertemuan-2/output) |
-| 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP](pertemuan-3/LP/jawaban.md) | [TP](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [output](pertemuan-3/output) |
-| 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [output](pertemuan-4/output) |
-| 5 | [Spring Java](pertemuan-5) | [PPT](pertemuan-5/materi/PPT_Pertemuan5_Spring.pdf) | [LP](pertemuan-5/LP/jawaban.md) | [TP](pertemuan-5/TP/jawaban.md) | [kode](pertemuan-5/kode) | [LA 5](pertemuan-5/LA/LA5_BimaGunawan_50423276.docx) | [output](pertemuan-5/output) |
-| 6 | [JasperReports](pertemuan-6) | [PPT](pertemuan-6/materi/PPT_Pertemuan6_JasperReports.pdf) | [LP](pertemuan-6/LP/jawaban.md) | [TP](pertemuan-6/TP/jawaban.md) | [kode](pertemuan-6/kode) | [makalah](pertemuan-6/makalah) | [output](pertemuan-6/output) |
+| 1 | [Rancangan aplikasi ERP](pertemuan-1) | [PPT](pertemuan-1/materi/PPT_Pertemuan1_Desain_Perangkat_Lunak.pptx) | [LP](pertemuan-1/LP/jawaban.md) | [TP](pertemuan-1/TP/jawaban.md) | - | [LA](pertemuan-1/LA/LA1_BimaGunawan_50423276.docx) | - |
+| 2 | [OOP Java](pertemuan-2) | [PPT](pertemuan-2/materi/PPT_Pertemuan2_OOP.pdf) | [LP](pertemuan-2/LP/jawaban.md) | [TP](pertemuan-2/TP/jawaban.md) | [kode](pertemuan-2/kode) | [LA](pertemuan-2/LA/LA2_BimaGunawan_50423276.docx) | [output](pertemuan-2/output) |
+| 3 | [MVC Java: login dan JDBC](pertemuan-3) | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP](pertemuan-3/LP/jawaban.md) | [TP](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [output](pertemuan-3/output) |
+| 4 | [ORM Java](pertemuan-4) | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [output](pertemuan-4/output) |
+| 5 | [Spring Java](pertemuan-5) | [PPT](pertemuan-5/materi/PPT_Pertemuan5_Spring.pdf) | [LP](pertemuan-5/LP/jawaban.md) | [TP](pertemuan-5/TP/jawaban.md) | [kode](pertemuan-5/kode) | [LA](pertemuan-5/LA/LA5_BimaGunawan_50423276.docx) | [output](pertemuan-5/output) |
+| 6 | [JasperReports](pertemuan-6) | [PPT](pertemuan-6/materi/PPT_Pertemuan6_JasperReports.pdf) | [LP](pertemuan-6/LP/jawaban.md) | [TP](pertemuan-6/TP/jawaban.md) | [kode](pertemuan-6/kode) | [Makalah](pertemuan-6/makalah) | [output](pertemuan-6/output) |
 | 7 | [Menyusul](pertemuan-7) | - | - | - | - | - | - |
-| 8 | [Ujian](pertemuan-8) | - | - | - | - | - | - |
+| 8 | [Manual Book](pertemuan-8) | - | - | - | - | - | [Manual Book](pertemuan-8) |
 
 </details>
 
