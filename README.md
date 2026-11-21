@@ -176,7 +176,7 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 3 | MVC Java: login dan JDBC | [PPT](pertemuan-3/materi/PPT_Pertemuan3_MVC.pdf) | [LP](pertemuan-3/LP/jawaban.md) | [TP](pertemuan-3/TP/jawaban.md) | [kode](pertemuan-3/kode) | [LA](pertemuan-3/LA/LA3_BimaGunawan_50423276.docx) | [output](pertemuan-3/output) |
 | 4 | ORM Java | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [output](pertemuan-4/output) |
 | 5 | [Spring Java](pertemuan-5) | [PPT](pertemuan-5/materi/PPT_Pertemuan5_Spring.pdf) | [LP](pertemuan-5/LP/jawaban.md) | [TP](pertemuan-5/TP/jawaban.md) | [kode](pertemuan-5/kode) | [LA 5](pertemuan-5/LA/LA5_BimaGunawan_50423276.docx) | [output](pertemuan-5/output) |
-| 6 | [JasperReports](pertemuan-6) | - | [LP](pertemuan-6/LP/jawaban.md) | - | [kode](pertemuan-6/kode) | - | [output](pertemuan-6/output) |
+| 6 | [JasperReports](pertemuan-6) | [PPT](pertemuan-6/materi/PPT_Pertemuan6_JasperReports.pdf) | [LP](pertemuan-6/LP/jawaban.md) | [TP](pertemuan-6/TP/jawaban.md) | [kode](pertemuan-6/kode) | - | [output](pertemuan-6/output) |
 | 7 | [Menyusul](pertemuan-7) | - | - | - | - | - | - |
 | 8 | [Ujian](pertemuan-8) | - | - | - | - | - | - |
 
