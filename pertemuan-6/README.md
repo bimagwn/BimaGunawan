@@ -2,7 +2,7 @@
 
 Jumat, 20 November 2026
 
-Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga format, yaitu PDF, Word, dan Excel, dari satu desain laporan yang sama. Materi, kode, output, LP, dan TP sudah ada, Laporan Akhir menyusul.
+Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga format, yaitu PDF, Word, dan Excel, dari satu desain laporan yang sama. Materi, kode, output, LP, TP, dan makalah (pengganti LA 6) sudah ada.
 
 | Bagian | Isi |
 |---|---|
@@ -10,7 +10,7 @@ Ringkasan: laporan JasperReports pada RamenKu kini dapat diunduh dalam tiga form
 | LP 6 | [jawaban.md](LP/jawaban.md) |
 | TP 6 | [jawaban.md](TP/jawaban.md) |
 | Kode | [kode/](kode) |
-| Laporan Akhir (LA 6) | [LA/](LA) (belum ada) |
+| Laporan Akhir (LA 6) | diganti makalah, lihat [LA/](LA) |
 | Makalah | [makalah/](makalah) (template makalah laboratorium, Word dan PDF) |
 | Output | [output/](output) |
 | Proses di Jaspersoft Studio | [output/studio](output/studio) (menyambungkan database, Preview, dan ekspor langkah demi langkah) |
