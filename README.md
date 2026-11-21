@@ -107,21 +107,6 @@ RamenKu/
 └── README.md
 ```
 
-## 🗄️ Struktur database
-
-Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`database/ramenku_db.sql`](database/ramenku_db.sql). Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
-
-| Tabel | Fungsi | Kolom |
-|---|---|---|
-| `pengguna` | akun untuk login | id, username, sandi (hash SHA-256), nama |
-| `bahan` | stok bahan baku | id, nama, satuan, stok, stok_minimal |
-| `menu` | daftar menu dan harganya | id, nama, harga |
-| `resep` | bahan yang dipakai per porsi tiap menu | id, menu_id (ke `menu`), bahan_id (ke `bahan`), jumlah |
-| `penjualan` | nota penjualan | id, waktu, total |
-| `penjualan_item` | isi tiap nota | id, penjualan_id (ke `penjualan`), menu_id (ke `menu`), jumlah, harga_satuan |
-
-![Diagram relasi database ramenku_db](database/diagram-relasi.png)
-
 ## 🧩 Susunan kode
 
 ```
@@ -152,6 +137,21 @@ src/
     ├── data/DataTest.java           DAO Spring dan Hibernate ke MySQL
     └── oop/KonsepOopTest.java
 ```
+
+## 🗄️ Struktur database
+
+Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`database/ramenku_db.sql`](database/ramenku_db.sql). Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
+
+| Tabel | Fungsi | Kolom |
+|---|---|---|
+| `pengguna` | akun untuk login | id, username, sandi (hash SHA-256), nama |
+| `bahan` | stok bahan baku | id, nama, satuan, stok, stok_minimal |
+| `menu` | daftar menu dan harganya | id, nama, harga |
+| `resep` | bahan yang dipakai per porsi tiap menu | id, menu_id (ke `menu`), bahan_id (ke `bahan`), jumlah |
+| `penjualan` | nota penjualan | id, waktu, total |
+| `penjualan_item` | isi tiap nota | id, penjualan_id (ke `penjualan`), menu_id (ke `menu`), jumlah, harga_satuan |
+
+![Diagram relasi database ramenku_db](database/diagram-relasi.png)
 
 ## ▶️ Cara menjalankan
 
