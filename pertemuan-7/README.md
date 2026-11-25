@@ -1,13 +1,13 @@
-# 🗓️ Pertemuan 7: materi menyusul
+# 🗓️ Pertemuan 7: GitHub dan Review
 
 Jumat, 27 November 2026
 
-Status: folder sudah disiapkan. Materi dan tugas diisi setelah pertemuan berlangsung.
+Status: LP 7 sudah dikerjakan. Materi dan tugas lain diisi setelah pertemuan berlangsung.
 
 | Bagian | Isi |
 |---|---|
 | Materi (PPT) | [materi/](materi) (belum ada) |
-| LP 7 | [LP/](LP) (belum ada) |
+| LP 7 | [soal dan jawaban](LP/jawaban.md) |
 | TP 7 | [TP/](TP) (belum ada) |
 | Kode | [kode/](kode) (belum ada) |
 | Laporan Akhir (LA 7) | [LA/](LA) (belum ada) |
