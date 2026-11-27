@@ -95,6 +95,7 @@ RamenKu/
 ├── assets/                        banner pada README ini
 ├── database/
 │   ├── ramenku_db.sql             skema dan data contoh MySQL
+│   ├── ramenku_db_lengkap.sql     ekspor lengkap database (struktur dan isi)
 │   └── diagram-relasi.png         diagram relasi
 ├── src/                           proyek RamenKu versi terbaru (Spring + Hibernate)
 ├── pom.xml                        konfigurasi Maven dan dependensi
@@ -140,7 +141,14 @@ src/
 
 ## 🗄️ Struktur database
 
-Database `ramenku_db` (MySQL) terdiri dari 6 tabel. Skema lengkapnya ada di [`database/ramenku_db.sql`](database/ramenku_db.sql). Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
+Database `ramenku_db` (MySQL) terdiri dari 6 tabel dan dipakai lewat Hibernate. Ada dua berkas database:
+
+| Berkas | Isi |
+|---|---|
+| [`database/ramenku_db.sql`](database/ramenku_db.sql) | skema dan data contoh, aman dijalankan ulang |
+| [`database/ramenku_db_lengkap.sql`](database/ramenku_db_lengkap.sql) | ekspor lengkap dari MySQL: struktur dan seluruh isi tabel |
+
+ Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
 
 | Tabel | Fungsi | Kolom |
 |---|---|---|
