@@ -9,20 +9,20 @@ Mata praktikum Rekayasa Perangkat Lunak 2, Pertemuan 7. Jawaban oleh Bima Gunawa
 ## Jawaban
 
 **1. Jelaskan alur kerja dasar Git mulai dari mengubah file hingga file tersimpan sebagai commit!**
-1. File diubah di **Working Directory**.
-2. Perubahan dimasukkan ke **Staging Area** dengan `git add`.
-3. Perubahan disimpan ke **repositori** sebagai commit dengan `git commit -m "pesan"`.
+1. **Ubah file** di Working Directory, status berkas menjadi _modified_.
+2. **git add**: berkas ditandai ke Staging Area, status menjadi _staged_.
+3. **git commit**: snapshot disimpan di database lokal beserta pesan, status menjadi _committed_.
 
 **2. Jelaskan perbedaan istilah Repository, Commit, Clone!**
-- **Repository**: tempat penyimpanan proyek beserta seluruh riwayat perubahannya.
-- **Commit**: satu catatan perubahan yang disimpan ke repository, disertai pesan.
-- **Clone**: menyalin repository dari _remote_ (misalnya GitHub) ke komputer lokal.
+- **Repository**: folder berisi file dan riwayat perubahan kode proyek.
+- **Commit**: rekaman perubahan pada file, yaitu siapa, apa, dan kapan.
+- **Clone**: salinan repository di komputer agar dapat diedit secara offline.
 
 **3. Jelaskan perbedaan antara Git dan GitHub!**
-**Git** adalah sistem kontrol versi yang berjalan di komputer lokal untuk mencatat perubahan kode. **GitHub** adalah layanan web untuk menyimpan repository Git secara daring dan berkolaborasi.
+**Git** adalah sistem kontrol versi untuk mencatat perubahan kode di komputer lokal. **GitHub** adalah layanan Git berbasis cloud (website) untuk menyimpan repository dan berkolaborasi.
 
 **4. Jelaskan fungsi perintah git config dan berikan contoh penggunaannya!**
-`git config` berfungsi mengatur konfigurasi Git, misalnya nama dan email yang dicatat pada setiap commit.
+`git config` berfungsi mengatur konfigurasi Git, seperti nama, email, algoritma diff, dan format file. Opsi `--global` berlaku untuk semua repository.
 
 ```bash
 git config --global user.name "Bima Gunawan"
@@ -30,4 +30,4 @@ git config --global user.email "email@contoh.com"
 ```
 
 **5. Jelaskan apa yang dimaksud dengan Version Control System (VCS) dan mengapa tim pengembang software membutuhkannya!**
-VCS adalah sistem yang mencatat setiap perubahan pada berkas sehingga versi sebelumnya dapat dilihat atau dikembalikan. Tim membutuhkannya agar dapat bekerja bersama tanpa saling menimpa pekerjaan, melacak siapa mengubah apa, dan memulihkan kode bila terjadi kesalahan.
+VCS adalah sistem yang membantu tim mengelola perubahan pada source code dengan mencatat semua modifikasi di database khusus. Tim membutuhkannya karena riwayat perubahan tercatat, mudah kembali ke versi lama saat terjadi error, dan banyak orang dapat bekerja bersama tanpa saling menimpa.

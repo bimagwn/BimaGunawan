@@ -2,11 +2,11 @@
 
 Jumat, 27 November 2026
 
-Status: LP 7 dan TP 7 sudah dikerjakan. Materi dan tugas lain diisi setelah pertemuan berlangsung.
+Status: materi, LP 7, dan TP 7 sudah ada. Materi dan tugas lain diisi setelah pertemuan berlangsung.
 
 | Bagian | Isi |
 |---|---|
-| Materi (PPT) | [materi/](materi) (belum ada) |
+| Materi (PPT) | [PPT GitHub dan Review](materi/PPT_Pertemuan7_GitHub.pptx) |
 | LP 7 | [soal dan jawaban](LP/jawaban.md) |
 | TP 7 | [soal dan jawaban](TP/jawaban.md) |
 | Kode | [kode/](kode) (belum ada) |
