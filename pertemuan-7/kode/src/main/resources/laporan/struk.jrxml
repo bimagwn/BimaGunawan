@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="struk" pageWidth="226" pageHeight="400" columnWidth="202" leftMargin="12" rightMargin="12" topMargin="14" bottomMargin="14" isIgnorePagination="true" uuid="ffc466ba-8515-4b61-9e46-67a2d503bd47">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RamenKu"/>
+	<style name="Dasar" isDefault="true" forecolor="#2E1C14" fontName="Arial" fontSize="9" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Tebal" style="Dasar" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="Judul" style="Dasar" fontName="Georgia" isBold="false" pdfFontName="Times-Roman"/>
+	<parameter name="NOTA_ID" class="java.lang.Integer"/>
+	<parameter name="WAKTU" class="java.lang.String"/>
+	<parameter name="TOTAL" class="java.math.BigDecimal"/>
+	<queryString>
+		<![CDATA[SELECT m.nama, i.jumlah, i.harga_satuan, i.jumlah * i.harga_satuan AS subtotal
+                 FROM penjualan_item i JOIN menu m ON m.id = i.menu_id
+                 WHERE i.penjualan_id = $P{NOTA_ID} ORDER BY i.id]]>
+	</queryString>
+	<field name="nama" class="java.lang.String"/>
+	<field name="jumlah" class="java.lang.Integer"/>
+	<field name="harga_satuan" class="java.math.BigDecimal"/>
+	<field name="subtotal" class="java.math.BigDecimal"/>
+	<title>
+		<band height="82">
+			<staticText>
+				<reportElement style="Judul" mode="Opaque" x="0" y="0" width="202" height="30" forecolor="#FBEEDA" backcolor="#2B1A12" uuid="1f8411ba-f1e5-44eb-b9b3-d4611bbd36c8"/>
+				<textElement textAlignment="Center" verticalAlignment="Bottom">
+					<font size="17"/>
+				</textElement>
+				<text><![CDATA[RamenKu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Dasar" mode="Opaque" x="0" y="30" width="202" height="16" forecolor="#F2C56B" backcolor="#2B1A12" uuid="f7b82427-414f-44f7-b384-c3fd718ff3b4"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Struk Penjualan]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="46" width="202" height="2" forecolor="#DD8A2D" uuid="a71b83a3-52dd-4e55-b80a-54e9a3d94f6f"/>
+				<graphicElement>
+					<pen lineWidth="2.0" lineColor="#DD8A2D"/>
+				</graphicElement>
+			</line>
+			<textField>
+				<reportElement x="0" y="54" width="202" height="12" uuid="c7dc65c6-6502-4091-b5d2-e8ab5101fdc6"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Nota No. " + $P{NOTA_ID}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="66" width="202" height="12" forecolor="#8B7360" uuid="518bb8a6-d00f-45c2-b083-094d93a73578"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{WAKTU}]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<detail>
+		<band height="32">
+			<textField textAdjust="StretchHeight">
+				<reportElement style="Tebal" x="0" y="3" width="202" height="13" uuid="7d68572e-23ce-4d15-8888-f2e26d0de28a"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField pattern="0 &apos;x&apos;">
+				<reportElement x="0" y="17" width="30" height="12" forecolor="#8B7360" uuid="989df71a-d705-46a3-84d6-0da4bc85e4c0"/>
+				<textFieldExpression><![CDATA[$F{jumlah}]]></textFieldExpression>
+			</textField>
+			<textField pattern="&apos;Rp&apos; #,##0">
+				<reportElement x="30" y="17" width="82" height="12" forecolor="#8B7360" uuid="dee0795f-d3c4-4a41-922b-accfe84437d0"/>
+				<textFieldExpression><![CDATA[$F{harga_satuan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="&apos;Rp&apos; #,##0">
+				<reportElement x="112" y="17" width="90" height="12" uuid="4ec5fc76-9694-4c9f-b596-cb37d8e3f2f8"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA[$F{subtotal}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="70">
+			<line>
+				<reportElement x="0" y="3" width="202" height="1" forecolor="#DD8A2D" uuid="80dcc4d4-a0dc-4ec6-b7e6-59fcae4d9ca0"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed" lineColor="#DD8A2D"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement style="Tebal" x="0" y="9" width="70" height="16" uuid="138c710f-b99d-4d34-b0dc-6bfdd21d948f"/>
+				<textElement verticalAlignment="Middle">
+					<font size="10" isBold="true"/>
+				</textElement>
+				<text><![CDATA[TOTAL]]></text>
+			</staticText>
+			<textField pattern="&apos;Rp&apos; #,##0">
+				<reportElement style="Tebal" x="70" y="9" width="132" height="16" uuid="a67631fd-9d77-4f61-823d-58347424950c"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="11" isBold="true"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$P{TOTAL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="32" width="202" height="1" forecolor="#DD8A2D" uuid="86df6970-f52f-4fdd-8d98-acb9ca5217d2"/>
+				<graphicElement>
+					<pen lineWidth="0.75" lineStyle="Dashed" lineColor="#DD8A2D"/>
+				</graphicElement>
+			</line>
+			<staticText>
+				<reportElement x="0" y="38" width="202" height="12" uuid="a0695f6a-8157-424c-a666-ab373fd3ba41"/>
+				<textElement textAlignment="Center">
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Terima kasih, sampai jumpa lagi!]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Judul" x="0" y="50" width="202" height="12" forecolor="#DD8A2D" uuid="6f135034-c10d-4dbb-ba33-4fa0fe4f5b24"/>
+				<textElement textAlignment="Center">
+					<font size="9"/>
+				</textElement>
+				<text><![CDATA[~ RamenKu ~]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

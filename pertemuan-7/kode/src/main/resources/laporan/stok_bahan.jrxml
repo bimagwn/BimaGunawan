@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.21.5.final using JasperReports Library version 6.21.5-74d586df47b25dbd05bd0957999819196e59934a  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="stok_bahan" pageWidth="595" pageHeight="842" columnWidth="515" leftMargin="40" rightMargin="40" topMargin="40" bottomMargin="40" uuid="22d3b524-f645-429c-b138-ff5b082057ae">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="RamenKu"/>
+	<style name="Dasar" isDefault="true" forecolor="#2E1C14" fontName="Arial" fontSize="10" pdfFontName="Helvetica" pdfEncoding="Cp1252" isPdfEmbedded="false"/>
+	<style name="Tebal" style="Dasar" isBold="true" pdfFontName="Helvetica-Bold"/>
+	<style name="Judul" style="Dasar" fontName="Georgia" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Status" style="Dasar">
+		<conditionalStyle>
+			<conditionExpression><![CDATA["MENIPIS".equals($F{status})]]></conditionExpression>
+			<style forecolor="#C0392B" isBold="true" pdfFontName="Helvetica-Bold"/>
+		</conditionalStyle>
+	</style>
+	<parameter name="TANGGAL" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[SELECT nama, satuan, stok, stok_minimal,
+                        IF(stok <= stok_minimal, 'MENIPIS', 'AMAN') AS status
+                 FROM bahan ORDER BY nama]]>
+	</queryString>
+	<field name="nama" class="java.lang.String"/>
+	<field name="satuan" class="java.lang.String"/>
+	<field name="stok" class="java.math.BigDecimal"/>
+	<field name="stok_minimal" class="java.math.BigDecimal"/>
+	<field name="status" class="java.lang.String"/>
+	<variable name="JUMLAH_MENIPIS" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA["MENIPIS".equals($F{status}) ? 1 : 0]]></variableExpression>
+	</variable>
+	<title>
+		<band height="82">
+			<staticText>
+				<reportElement style="Judul" mode="Opaque" x="0" y="0" width="515" height="36" forecolor="#FBEEDA" backcolor="#2B1A12" uuid="b8d8abb8-0fc4-4f4b-a3a4-26f08333ad5f"/>
+				<box leftPadding="14"/>
+				<textElement verticalAlignment="Bottom">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[RamenKu]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Dasar" mode="Opaque" x="0" y="36" width="280" height="24" forecolor="#F2C56B" backcolor="#2B1A12" uuid="5cd0eb4a-2075-4b5d-83f9-8325c4b9474b"/>
+				<box leftPadding="14"/>
+				<textElement verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Laporan Stok Bahan]]></text>
+			</staticText>
+			<textField>
+				<reportElement style="Dasar" mode="Opaque" x="280" y="36" width="235" height="24" forecolor="#BFA48C" backcolor="#2B1A12" uuid="89fe85c5-71c8-4557-9660-b3783886709b"/>
+				<box rightPadding="14"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle">
+					<font size="9"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Dicetak pada " + $P{TANGGAL}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="0" y="60" width="515" height="3" forecolor="#DD8A2D" uuid="0646306d-eb85-431d-ab35-236355f49c06"/>
+				<graphicElement>
+					<pen lineWidth="3.0" lineColor="#DD8A2D"/>
+				</graphicElement>
+			</line>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="26">
+			<staticText>
+				<reportElement style="Tebal" mode="Opaque" x="0" y="0" width="34" height="26" forecolor="#F2C56B" backcolor="#2B1A12" uuid="df8fa232-3c88-4eb7-8cf5-fe756829c98e"/>
+				<box leftPadding="6"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Tebal" mode="Opaque" x="34" y="0" width="191" height="26" forecolor="#F2C56B" backcolor="#2B1A12" uuid="2faa103b-bfc8-4319-8fbd-70667f82a977"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Nama Bahan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Tebal" mode="Opaque" x="225" y="0" width="60" height="26" forecolor="#F2C56B" backcolor="#2B1A12" uuid="178bef0f-cb7c-40f6-8732-2fcec3d1d956"/>
+				<textElement verticalAlignment="Middle"/>
+				<text><![CDATA[Satuan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Tebal" mode="Opaque" x="285" y="0" width="80" height="26" forecolor="#F2C56B" backcolor="#2B1A12" uuid="92ca053d-46c8-4f00-8f50-b16e01c4d201"/>
+				<box rightPadding="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Stok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Tebal" mode="Opaque" x="365" y="0" width="80" height="26" forecolor="#F2C56B" backcolor="#2B1A12" uuid="c120b40d-6294-4802-91bd-813f91e766a6"/>
+				<box rightPadding="8"/>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<text><![CDATA[Minimal]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Tebal" mode="Opaque" x="445" y="0" width="70" height="26" forecolor="#F2C56B" backcolor="#2B1A12" uuid="aafaf2b8-3936-4575-acd5-6d762d9af0d2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="24">
+			<textField>
+				<reportElement x="0" y="0" width="34" height="24" uuid="755bc6e9-576c-470b-ba2e-d7f804f3f431"/>
+				<box leftPadding="6">
+					<bottomPen lineWidth="0.5" lineColor="#E3D3BA"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$V{REPORT_COUNT}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="34" y="0" width="191" height="24" uuid="2cf9431b-2374-4cdb-b517-bd2b82edad0c"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#E3D3BA"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="225" y="0" width="60" height="24" uuid="87883751-0722-4b5a-b81d-dbe3394c2679"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#E3D3BA"/>
+				</box>
+				<textElement verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{satuan}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.##">
+				<reportElement x="285" y="0" width="80" height="24" uuid="84bbb823-9e06-4efe-b4bd-f9af8393e1b0">
+					<property name="net.sf.jasperreports.export.xls.pattern" value="General"/>
+				</reportElement>
+				<box rightPadding="8">
+					<bottomPen lineWidth="0.5" lineColor="#E3D3BA"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{stok}]]></textFieldExpression>
+			</textField>
+			<textField pattern="#,##0.##">
+				<reportElement x="365" y="0" width="80" height="24" uuid="029b0b93-2ff8-4dc1-bbb6-e9744962617e">
+					<property name="net.sf.jasperreports.export.xls.pattern" value="General"/>
+				</reportElement>
+				<box rightPadding="8">
+					<bottomPen lineWidth="0.5" lineColor="#E3D3BA"/>
+				</box>
+				<textElement textAlignment="Right" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{stok_minimal}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement style="Status" x="445" y="0" width="70" height="24" uuid="56a066db-f7cf-4f4d-b746-7ebdd62c8a90"/>
+				<box>
+					<bottomPen lineWidth="0.5" lineColor="#E3D3BA"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle"/>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<pageFooter>
+		<band height="24">
+			<textField>
+				<reportElement x="0" y="6" width="515" height="14" forecolor="#8B7360" uuid="d3049973-0371-4bf5-a98f-82f436338dc5"/>
+				<textElement textAlignment="Right">
+					<font size="8"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Halaman " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="46">
+			<textField>
+				<reportElement style="Tebal" x="0" y="14" width="515" height="18" uuid="35ab9762-7689-4728-94de-97fc193eaed5"/>
+				<textFieldExpression><![CDATA["Jumlah bahan: " + $V{REPORT_COUNT} + "     Bahan menipis: " + $V{JUMLAH_MENIPIS}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>
