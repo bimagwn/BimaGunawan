@@ -148,7 +148,7 @@ Database `ramenku_db` (MySQL) terdiri dari 6 tabel dan dipakai lewat Hibernate. 
 | [`database/ramenku_db.sql`](database/ramenku_db.sql) | skema dan data contoh, aman dijalankan ulang |
 | [`database/ramenku_db_lengkap.sql`](database/ramenku_db_lengkap.sql) | ekspor lengkap dari MySQL: struktur dan seluruh isi tabel |
 
- Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
+Tampilan struktur, relasi, dan isi tiap tabel dari phpMyAdmin ada di [output Pertemuan 3](pertemuan-3/output).
 
 | Tabel | Fungsi | Kolom |
 |---|---|---|
