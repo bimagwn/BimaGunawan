@@ -11,6 +11,7 @@ Ringkasan: konsep OOP (Encapsulation, Inheritance, Polymorphism) diterapkan pada
 | TP 2 | [jawaban.md](TP/jawaban.md) |
 | Kode (ACT 2) | [kode/](kode) |
 | Laporan Akhir (LA 2) | [LA2_BimaGunawan_50423276.docx](LA/LA2_BimaGunawan_50423276.docx) |
+| Laporan Akhir (LA 2, PDF) | [LA2_BimaGunawan_50423276.pdf](LA/LA2_BimaGunawan_50423276.pdf) |
 | Output | [output/](output) |
 
 [Kembali ke README utama](../README.md)

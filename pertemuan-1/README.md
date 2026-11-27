@@ -12,5 +12,7 @@ Ringkasan: merancang aplikasi kedai ramen dalam bentuk dokumen. Pada pertemuan i
 | ACT 1 (Word) | [ACT1_BimaGunawan_50423276.docx](ACT/ACT1_BimaGunawan_50423276.docx) |
 | ACT 1 (PDF) | [ACT1_BimaGunawan_50423276.pdf](ACT/ACT1_BimaGunawan_50423276.pdf) |
 | Laporan Akhir (LA 1) | [LA1_BimaGunawan_50423276.docx](LA/LA1_BimaGunawan_50423276.docx) |
+| Laporan Akhir (LA 1, PDF) | [LA1_BimaGunawan_50423276.pdf](LA/LA1_BimaGunawan_50423276.pdf) |
+| Dokumentasi aplikasi | [Dokumentasi_RamenKu_BimaGunawan_50423276.docx](dokumentasi/Dokumentasi_RamenKu_BimaGunawan_50423276.docx) |
 
 [Kembali ke README utama](../README.md)
