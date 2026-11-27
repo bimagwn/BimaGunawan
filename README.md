@@ -180,11 +180,11 @@ PDF hasil cetak tersimpan di folder `laporan/` di samping aplikasi (tidak ikut k
 
 ## 📘 Manual Book
 
-Manual Book adalah materi Pertemuan 8. Isinya panduan lengkap memasang, memakai, dan memahami RamenKu dari Pertemuan 1 sampai 6: persiapan, panduan tiap fitur, basis data, arsitektur kode, laporan JasperReports, dan Jaspersoft Studio.
+Manual Book adalah hasil Pertemuan 8, disusun dari Pertemuan 1 sampai 8. Isinya panduan lengkap memasang, memakai, dan memahami RamenKu: persiapan, panduan tiap fitur, basis data, arsitektur kode, laporan JasperReports, Jaspersoft Studio, serta Git dan GitHub.
 
 | Berkas | Isi |
 |---|---|
-| [Manual Book V2 (PDF)](pertemuan-8/ManualBook_RamenKu_BimaGunawan_50423276_V2.pdf) | 28 halaman, langsung bisa dibaca di GitHub |
+| [Manual Book V2 (PDF)](pertemuan-8/ManualBook_RamenKu_BimaGunawan_50423276_V2.pdf) | 31 halaman, langsung bisa dibaca di GitHub |
 | [Manual Book V2 (Word)](pertemuan-8/ManualBook_RamenKu_BimaGunawan_50423276_V2.docx) | berkas yang bisa diedit |
 
 ## 🧰 Merancang laporan di Jaspersoft Studio
