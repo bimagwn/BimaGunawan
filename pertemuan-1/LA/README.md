@@ -2,4 +2,6 @@
 
 [LA1_BimaGunawan_50423276.docx](LA1_BimaGunawan_50423276.docx)
 
+[LA1_BimaGunawan_50423276.pdf](LA1_BimaGunawan_50423276.pdf)
+
 [Kembali ke Pertemuan 1](../README.md)
