@@ -44,7 +44,7 @@ Praktikum berlangsung setiap hari Jumat pagi.
 | 4 | 6 Nov 2026 | **ORM**: Hibernate | lapisan data pindah ke Hibernate (entitas, HQL, transaksi) |
 | 5 | 13 Nov 2026 | **Spring** Java | Spring mengelola Hibernate lewat DAO: Dependency Injection, transaksi deklaratif, AOP ([pertemuan-5](pertemuan-5)) |
 | 6 | 20 Nov 2026 | **JasperReports** | laporan diunduh sebagai PDF, Word, dan Excel, dengan tampilan aplikasi dan laporan yang baru ([pertemuan-6](pertemuan-6)) |
-| 7 | 27 Nov 2026 | **GitHub** dan Review | proyek diselesaikan: NetBeans, JasperReports, MySQL, dan Hibernate, beserta database di GitHub ([pertemuan-7](pertemuan-7)) |
+| 7 | 27 Nov 2026 | **GitHub** dan Review | proyek diselesaikan (NetBeans, JasperReports, MySQL, Hibernate) dan seluruh isi Pertemuan 1 sampai 7 digabung ([pertemuan-7](pertemuan-7)) |
 | 8 | 4 Des 2026 | **Manual Book** RamenKu | [pertemuan-8](pertemuan-8) |
 
 ## 🖼️ Tampilan aplikasi
@@ -208,7 +208,7 @@ Setiap pertemuan punya folder sendiri berisi materi (PPT), soal dan jawaban LP/T
 | 4 | [ORM Java](pertemuan-4) | [PPT](pertemuan-4/materi/PPT_Pertemuan4_ORM.pdf) | [LP](pertemuan-4/LP/jawaban.md) | [TP](pertemuan-4/TP/jawaban.md) | [kode](pertemuan-4/kode) | [LA](pertemuan-4/LA/LA4_BimaGunawan_50423276.docx) | [output](pertemuan-4/output) |
 | 5 | [Spring Java](pertemuan-5) | [PPT](pertemuan-5/materi/PPT_Pertemuan5_Spring.pdf) | [LP](pertemuan-5/LP/jawaban.md) | [TP](pertemuan-5/TP/jawaban.md) | [kode](pertemuan-5/kode) | [LA](pertemuan-5/LA/LA5_BimaGunawan_50423276.docx) | [output](pertemuan-5/output) |
 | 6 | [JasperReports](pertemuan-6) | [PPT](pertemuan-6/materi/PPT_Pertemuan6_JasperReports.pdf) | [LP](pertemuan-6/LP/jawaban.md) | [TP](pertemuan-6/TP/jawaban.md) | [kode](pertemuan-6/kode) | [Makalah](pertemuan-6/makalah) | [output](pertemuan-6/output) |
-| 7 | [GitHub dan Review](pertemuan-7) | [PPT](pertemuan-7/materi/PPT_Pertemuan7_GitHub.pptx) | [LP](pertemuan-7/LP/jawaban.md) | [TP](pertemuan-7/TP/jawaban.md) | [kode](pertemuan-7/kode) | - | - |
+| 7 | [GitHub dan Review](pertemuan-7) | [PPT](pertemuan-7/materi/PPT_Pertemuan7_GitHub.pptx) | [LP](pertemuan-7/LP/LP7_jawaban.md) | [TP](pertemuan-7/TP/TP7_jawaban.md) | [kode](pertemuan-7/kode) | [gabungan LA](pertemuan-7/LA) | [output](pertemuan-7/output) |
 | 8 | [Manual Book](pertemuan-8) | - | - | - | - | - | [Manual Book](pertemuan-8) |
 
 </details>

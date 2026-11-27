@@ -4,7 +4,7 @@ Mata praktikum Rekayasa Perangkat Lunak 2, Pertemuan 7. Jawaban oleh Bima Gunawa
 
 ## Soal
 
-![Soal LP 7](soal.jpg)
+![Soal LP 7](LP7_soal.jpg)
 
 ## Jawaban
 
